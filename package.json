@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "npm exec tailwindcss -i ./src/styles.css -o ./public/css/styles.css --watch",
+    "start": "node server.js",
+    "dev": "concurrently \"npm run build-css\" \"nodemon server.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
+    "tailwindcss": "^3.4.17"
+  }
+}
