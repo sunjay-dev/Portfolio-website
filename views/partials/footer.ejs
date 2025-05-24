@@ -1,4 +1,4 @@
-<footer class="bg-[#3d3d3d] p-10 selection:text-[#3d3d3d] selection:bg-gray-50">
+<footer class="bg-[#3d3d3d] p-10 [&_*]:selection:bg-gray-50 [&_*]:selection:text-[#3d3d3d]">
     <!-- logo and navigation section -->
     <div
         class="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between items-center mb-8 pt-4 pb-6 border-b border-[#6a6a6a]">
@@ -13,22 +13,23 @@
         </div>
         <div
             class="grid grid-cols-2 md:block md:space-x-4 sm:grid-cols-3 gap-2 sm:gap-4 text-gray-300 font-medium px-4 py-2">
-            <a href="">Home</a>
+            <a href="#homeSection">Home</a>
             <a href="">About</a>
-            <a href="">Skills</a>
+            <a href="#skillsSection">Skills</a>
             <a href="">Achievements</a>
             <a href="">Education</a>
-            <a href="">Contact</a>
+            <a href="#contactSection">Contact</a>
         </div>
 
-        <button class="text-white p-2.5 rounded-full sm:animate-none animate-bounce bg-[#6a6a6a]">
+        <a href="#homeSection" class="text-white p-2.5 rounded-full sm:animate-none animate-bounce bg-[#6a6a6a]">
+            <!-- Up Arrow -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="w-5 h-5 rotate-180 cursor-pointer">
                 <path d="M12 5v14"></path>
                 <path d="m19 12-7 7-7-7"></path>
             </svg>
-        </button>
+        </a>
     </div>
     <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-200">
         <p>Made with ❤️ by Sunjay Kumar © 2025</p>

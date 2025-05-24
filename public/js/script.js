@@ -34,8 +34,11 @@ form.onsubmit = (e) => {
             email: email.value,
             message: message.value
         })
-    }).then(res => { return res.json() })
-        .then(data => {
+    }).then(res => {
+        if(!res.ok) throw new Error('Something wrong happened!');
+        return res.json();
+      }).then(data => {
+            console.log(data);
             email.value = '';
             name.value = '';
             message.value = '';
