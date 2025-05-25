@@ -110,11 +110,11 @@ let projectsDiv = document.querySelector('#projectsDiv');
 projects.forEach(project => {
 
     projectsDiv.innerHTML += `
-    <div onclick="window.open('${project.url}', '_blank')" class="cursor-pointer group mt-14 grid md:grid-cols-3 gride-col-1 gap-7 justify-between items-center sm:transition sm:duration-300 sm:transform sm:hover:scale-[1.02] sm:hover:shadow-lg sm:hover:bg-[#f8f8f8] sm:hover:p-4 sm:shadow-none shadow-lg sm:bg-transparent bg-[#f8f8f8] sm:p-0 p-4 rounded-xl">
-        <img src="${project.imgUrl}" class="md:col-span-1 w-full max-h-44 object-cover select-none sm:p-0 p-2">
+    <div onclick="window.open('${project.url}', '_blank')" class="cursor-pointer group mt-14 grid md:grid-cols-3 gride-col-1 gap-4 md:gap-7 justify-between items-center transition duration-300 transform hover:scale-[1.02] sm:hover:shadow-lg sm:hover:bg-[#f8f8f8] sm:hover:p-4 sm:shadow-none shadow-lg sm:bg-transparent bg-[#f8f8f8] sm:p-0 p-4 rounded-xl">
+        <img src="${project.imgUrl}" class="md:col-span-1 w-full max-h-44 object-cover select-none sm:p-0 p-2 rounded-xl sm:rounded-md">
             <div class="md:col-span-2 space-y-2 p-2">
                 <h3 class="text-xs font-medium">${project.time}</h3>
-                <a href="${project.url}" target"_blank" class="hover:underline text-lg sm:text-xl font-semibold flex items-center">${project.name} <iconify-icon
+                <a href="${project.url}" target"_blank" class="hover:underline group-hover:underline md:group-hover:no-underline text-lg sm:text-xl font-semibold flex items-center">${project.name} <iconify-icon
                         icon="heroicons:arrow-up-right-16-solid" class="ml-1  transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" width="16" height="16"></iconify-icon></a>
                 <p class="font-normal opacity-80 selection:opacity-100">${project.description}</p>
                 ${project.technology.map(tech => `
@@ -125,3 +125,10 @@ projects.forEach(project => {
     `
 })
 
+let achievements = [{
+
+}]
+
+achievements.forEach(achievement => {
+    
+})
