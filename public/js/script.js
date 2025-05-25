@@ -91,11 +91,11 @@ let projects = [
     },
     {
         imgUrl: "/img/weatherWeb.png",
-        name: "Weather Web App using Redis",
+        name: "Weather Web using Redis",
         technology: ["Redis", "Express.js", "EJS", "Vercel"],
         time: "Mar 2025",
         url: "https://weather.sunjay.xyz",
-        description: "Weather Web App helps to quickly check the current weather of any city. It shows real-time information in a clean and simple interface, making it easy to plan your day."
+        description: "It helps to quickly check the current weather of any city. It shows real-time information in a clean and simple interface, making it easy to plan your day."
     },
     {
         imgUrl: "/img/urlShortner.png",
@@ -110,8 +110,8 @@ let projectsDiv = document.querySelector('#projectsDiv');
 projects.forEach(project => {
 
     projectsDiv.innerHTML += `
-    <div onclick="window.open('${project.url}', '_blank')" class="cursor-pointer group mt-14 grid md:grid-cols-3 gride-col-1 gap-7 justify-between items-center transition duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:bg-[#f8f8f8] hover:p-4 rounded-xl">
-        <img src="${project.imgUrl}" class="md:col-span-1 w-full max-h-44 object-cover select-none">
+    <div onclick="window.open('${project.url}', '_blank')" class="cursor-pointer group mt-14 grid md:grid-cols-3 gride-col-1 gap-7 justify-between items-center sm:transition sm:duration-300 sm:transform sm:hover:scale-[1.02] sm:hover:shadow-lg sm:hover:bg-[#f8f8f8] sm:hover:p-4 sm:shadow-none shadow-lg sm:bg-transparent bg-[#f8f8f8] sm:p-0 p-4 rounded-xl">
+        <img src="${project.imgUrl}" class="md:col-span-1 w-full max-h-44 object-cover select-none sm:p-0 p-2">
             <div class="md:col-span-2 space-y-2 p-2">
                 <h3 class="text-xs font-medium">${project.time}</h3>
                 <a href="${project.url}" target"_blank" class="hover:underline text-lg sm:text-xl font-semibold flex items-center">${project.name} <iconify-icon
