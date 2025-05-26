@@ -192,7 +192,7 @@ function changeAchievementsDetails(id) {
                 <h3 class="text-sm font-normal text-gray-500">${achievement.time}</h3>
             </div>
             <h3 class="text-xl font-bold">${achievement.name}</h3>
-            <a href="${achievement.url}" target"_blank" class="group hover:underline text-sm flex font-normal items-center">${achievement.place}
+            <a href="${achievement.url}" target='_blank' class="group hover:underline text-sm flex font-normal items-center">${achievement.place}
                 <iconify-icon icon="heroicons:arrow-up-right-16-solid"
                     class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"></iconify-icon></a>
 
