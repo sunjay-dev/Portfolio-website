@@ -1,0 +1,24 @@
+# 🌐 Sunjay Kumar – Personal Portfolio
+
+This is my personal developer portfolio website built using **EJS**, **Tailwind CSS**, and **NODEJS**. It showcases my projects, skills, and experience as a full-stack software engineer.
+
+## 🛠 Tech Stack USED IN WEBSITE
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
+![EJS](https://img.shields.io/badge/ejs-%23B4CA65.svg?style=for-the-badge&logo=ejs&logoColor=black) 
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) 
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) 
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+
+## 🚀 Features
+
+- Responsive design (mobile-first)
+- Clean UI built with Tailwind CSS
+- simple Animations
+- Home,About me, skills, projects , and contact section
+- Dark mode ready (20% done)
+- Hosted on Vercel
+
+## 📜 License
+This project is open-source and available under the MIT License.
