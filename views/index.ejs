@@ -8,6 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Sunjay Kumar – Full-Stack Developer" />
+  <meta property="og:description"
+    content="Passionate full-stack developer skilled in JavaScript, Node.js, React, and MongoDB." />
+  <meta property="og:image" content="https://sunjay.xyz.com/img/me.jpg" />
+  <meta property="og:url" content="https://sunjay.xyz/" />
+  <meta property="og:type" content="website" />
   <title>Sunjay Kumar | Node.js Backend Developer</title>
   <link href="/css/style.css" rel="stylesheet" />
 </head>
@@ -16,14 +22,15 @@
   class="font-[Inter] relative overflow-x-hidden selection:bg-[#3d3d3d] selection:text-gray-50 dark:selection:text-[#3d3d3d] dark:selection:bg-gray-50">
 
   <%- include('partials/toggle') %>
-  <%- include('partials/home') %>
-  <%- include('partials/about') %>
-  <%- include('partials/skills') %>
-  <%- include('partials/projects') %>
-  <%- include('partials/achievements') %>
-  <%- include('partials/contact') %>
-  <%- include('partials/footer') %>
+    <%- include('partials/home') %>
+      <%- include('partials/about') %>
+        <%- include('partials/skills') %>
+          <%- include('partials/projects') %>
+            <%- include('partials/achievements') %>
+              <%- include('partials/contact') %>
+                <%- include('partials/footer') %>
 </body>
 <script src="/js/script.js"></script>
 <script defer src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
 </html>
