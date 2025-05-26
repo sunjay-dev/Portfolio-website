@@ -69,7 +69,7 @@ let skills = [
     { name: "WordPress", icon: "wordpress-icon" }
 ];
 
-let skillsDiv = document.querySelector('#skills');
+let skillsDiv = document.querySelector('#skillsDiv');
 skills.forEach(skill => {
 
     skillsDiv.innerHTML += `
@@ -133,7 +133,7 @@ let achievements = [
         place: "Dev Post",
         url: "https://devpost.com/software/ride-sharing-website",
         shortDesc: "Ranked <b>20th overall</b> and won the <b>Public Voting Award</b> among 100+ participating teams.",
-        KeyAchivements: [
+        KeyAchievement: [
             "Created a carpooling web app to solve university commute issues.",
             "Developed backend using Express.js and MongoDB to handle ride creation, joining, and real-time updates via WebSockets.",
             "Designed responsive frontend using EJS and Tailwind CSS for a unified login and dashboard experience.",
@@ -147,7 +147,7 @@ let achievements = [
         place: "MUET, Jamshoro",
         url: "https://www.muet.edu.pk/",
         shortDesc: "Completed 4-year undergraduate degree with a strong foundation in full-stack web development and software engineering principles.",
-        KeyAchivements: [
+        KeyAchievement: [
             "Graduated with hands-on experience in MERN stack development, database design, and RESTful APIs.",
             "Built multiple academic projects, including a real-time carpooling app, a weather dashboard, and a file-sharing platform.",
             "Contributed to open-source projects and actively participated in hackathons and coding competitions.",
@@ -161,7 +161,7 @@ let achievements = [
         place: "National Freelancing Training Program",
         url: "https://nftp.pitb.gov.pk/",
         shortDesc: "Completed a comprehensive full-stack web development training with a focus on Node.js backend, RESTful APIs, and database integration.",
-        KeyAchivements: [
+        KeyAchievement: [
             "Built foundational knowledge in JavaScript, Node.js, and Express.js.",
             "Learned RESTful API design, server-side rendering, and web security best practices.",
             "Worked with both SQL and NoSQL databases for backend integration.",
@@ -198,11 +198,11 @@ function changeAchievementsDetails(id) {
 
             <div class="space-y-5">
                 <p>${achievement.shortDesc}</p>
-                <h3 class="text-sm font-bold">KEY ACHIVEMENTS</h3>
+                <h3 class="text-sm font-bold">KEY ACHIEVEMENTS</h3>
             </div>
             <ul class="list-disc pl-5 space-y-2">
-            ${achievement.KeyAchivements.map(KeyAchivement =>
-                    `<li>${KeyAchivement}</li>`
+            ${achievement.KeyAchievement.map(KeyAchievement =>
+                    `<li>${KeyAchievement}</li>`
                 ).join('')}
             </ul>
         `
@@ -213,3 +213,10 @@ function changeAchievementsDetails(id) {
     })
 }
 changeAchievementsDetails(1);
+
+
+bouncingArrowDown.addEventListener('click', ()=>{
+    let a = document.createElement('a');
+    a.href="#about";
+    a.click();
+})
