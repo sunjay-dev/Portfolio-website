@@ -125,10 +125,91 @@ projects.forEach(project => {
     `
 })
 
-let achievements = [{
+let achievements = [
+    {
+        id: 1,
+        time: "Jan - Feb 2025",
+        name: "Hack for Humanity - 2025",
+        place: "Dev Post",
+        url: "https://devpost.com/software/ride-sharing-website",
+        shortDesc: "Ranked <b>20th overall</b> and won the <b>Public Voting Award</b> among 100+ participating teams.",
+        KeyAchivements: [
+            "Created a carpooling web app to solve university commute issues.",
+            "Developed backend using Express.js and MongoDB to handle ride creation, joining, and real-time updates via WebSockets.",
+            "Designed responsive frontend using EJS and Tailwind CSS for a unified login and dashboard experience.",
+            "Implemented ride history, live ride tracking, and notification system for cancellations"
+        ]
+    },
+    {
+        id: 2,
+        time: "2022 - Present",
+        name: "Bachelor's in Software Engineering",
+        place: "MUET, Jamshoro",
+        url: "https://www.muet.edu.pk/",
+        shortDesc: "Completed 4-year undergraduate degree with a strong foundation in full-stack web development and software engineering principles.",
+        KeyAchivements: [
+            "Graduated with hands-on experience in MERN stack development, database design, and RESTful APIs.",
+            "Built multiple academic projects, including a real-time carpooling app, a weather dashboard, and a file-sharing platform.",
+            "Contributed to open-source projects and actively participated in hackathons and coding competitions.",
+            "Developed strong problem-solving skills through regular coursework, labs, and collaborative team-based projects."
+        ]
+    },
+    {
+        id: 3,
+        time: "2023",
+        name: "Web Development Course",
+        place: "National Freelancing Training Program",
+        url: "https://nftp.pitb.gov.pk/",
+        shortDesc: "Completed a comprehensive full-stack web development training with a focus on Node.js backend, RESTful APIs, and database integration.",
+        KeyAchivements: [
+            "Built foundational knowledge in JavaScript, Node.js, and Express.js.",
+            "Learned RESTful API design, server-side rendering, and web security best practices.",
+            "Worked with both SQL and NoSQL databases for backend integration.",
+            "Practiced version control using Git and gained exposure to real-world web development workflows."
+        ]
+    }
+];
 
-}]
+const achievementsNameDiv = document.querySelector('#achievementsNameDiv');
 
 achievements.forEach(achievement => {
-    
+    achievementsNameDiv.innerHTML +=
+        `<div id="name_${achievement.id}" onclick="changeAchievementsDetails(${achievement.id})" class="p-3 cursor-pointer border-l-4 border-[#3d3d3d] hover:bg-white">
+        <h3 class="text-lg font-bold">${achievement.name}</h3>
+        <p class="text-sm font-normal">${achievement.place}</p>
+    </div>`
 })
+const achievementsDetailsDiv = document.querySelector('#achievementsDetailsDiv');
+let currentState = 0;
+function changeAchievementsDetails(id) {
+    if (id === currentState) return;
+
+    achievements.forEach(achievement => {
+        if (achievement.id === id) {
+            achievementsDetailsDiv.innerHTML =
+                `<div class="flex gap-2 items-center">
+                <iconify-icon icon="uil:calender" class="h-4 w-4 text-gray-600"></iconify-icon>
+                <h3 class="text-sm font-normal text-gray-500">${achievement.time}</h3>
+            </div>
+            <h3 class="text-xl font-bold">${achievement.name}</h3>
+            <a href="${achievement.url}" target"_blank" class="group hover:underline text-sm flex font-normal items-center">${achievement.place}
+                <iconify-icon icon="heroicons:arrow-up-right-16-solid"
+                    class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"></iconify-icon></a>
+
+            <div class="space-y-5">
+                <p>${achievement.shortDesc}</p>
+                <h3 class="text-sm font-bold">KEY ACHIVEMENTS</h3>
+            </div>
+            <ul class="list-disc pl-5 space-y-2">
+            ${achievement.KeyAchivements.map(KeyAchivement =>
+                    `<li>${KeyAchivement}</li>`
+                ).join('')}
+            </ul>
+        `
+        document.querySelector(`#name_${id}`).classList.add('bg-white');
+        document.querySelector(`#name_${currentState}`)?.classList.remove('bg-white');
+        currentState = id;
+        }
+    })
+}
+changeAchievementsDetails(1);
