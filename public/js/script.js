@@ -206,17 +206,39 @@ function changeAchievementsDetails(id) {
                 ).join('')}
             </ul>
         `
-        document.querySelector(`#name_${id}`).classList.add('bg-white');
-        document.querySelector(`#name_${currentState}`)?.classList.remove('bg-white');
-        currentState = id;
+            document.querySelector(`#name_${id}`).classList.add('bg-white');
+            document.querySelector(`#name_${currentState}`)?.classList.remove('bg-white');
+            currentState = id;
         }
     })
 }
 changeAchievementsDetails(1);
 
 
-bouncingArrowDown.addEventListener('click', ()=>{
+bouncingArrowDown.addEventListener('click', () => {
     let a = document.createElement('a');
-    a.href="#about";
+    a.href = "#about";
     a.click();
 })
+
+const menuBtn = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
+const closeBtn = document.getElementById('close-btn');
+
+menuBtn.addEventListener('click', () => {
+    menu.classList.remove('hidden');
+    menu.classList.add('flex');
+});
+
+document.querySelectorAll('#menu a').forEach(a => {
+    a.classList.add('hover:underline', 'font-medium');
+    a.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    menu.classList.remove('flex');
+});
