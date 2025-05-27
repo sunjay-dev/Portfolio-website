@@ -223,6 +223,7 @@ function scrollMe(to){
 function downloadResume(){
     let a = document.createElement('a');
     a.href = `/pdf/resume.pdf`;
+    a.download = 'Sunjay_Kumar_Resume.pdf';
     a.click();
 }
 const menuBtn = document.getElementById('menuBtn');
