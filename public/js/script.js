@@ -67,6 +67,7 @@ let skills = [
     { name: "Kafka", icon: "kafka" },
     { name: "Puppeteer", icon: "puppeteer" },
     { name: "WordPress", icon: "wordpress-icon" }
+    
 ];
 
 let skillsDiv = document.querySelector('#skillsDiv');
@@ -233,6 +234,7 @@ const closeBtn = document.getElementById('close-btn');
 menuBtn.addEventListener('click', () => {
     menu.classList.remove('hidden');
     menu.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
 });
 
 document.querySelectorAll('#menu a').forEach(a => {
@@ -246,4 +248,5 @@ document.querySelectorAll('#menu a').forEach(a => {
 closeBtn.addEventListener('click', () => {
     menu.classList.add('hidden');
     menu.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
 });

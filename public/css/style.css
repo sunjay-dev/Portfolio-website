@@ -697,6 +697,10 @@ video {
   margin-top: 3.75rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1014,6 +1018,10 @@ video {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-x-hidden {
   overflow-x: hidden;
 }
@@ -1233,6 +1241,26 @@ video {
 
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
+.pb-28 {
+  padding-bottom: 7rem;
+}
+
+.pb-32 {
+  padding-bottom: 8rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pb-24 {
+  padding-bottom: 6rem;
 }
 
 .text-center {
@@ -1530,10 +1558,6 @@ video {
 
 .group:hover .group-hover\:underline {
   text-decoration-line: underline;
-}
-
-.group:hover .group-hover\:opacity-100 {
-  opacity: 1;
 }
 
 .dark\:block:is(.dark *) {
