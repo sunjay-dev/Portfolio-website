@@ -215,12 +215,16 @@ function changeAchievementsDetails(id) {
 changeAchievementsDetails(1);
 
 
-bouncingArrowDown.addEventListener('click', () => {
+function scrollMe(to){
     let a = document.createElement('a');
-    a.href = "#about";
+    a.href = `#${to}`;
     a.click();
-})
-
+}
+function downloadResume(){
+    let a = document.createElement('a');
+    a.href = `/pdf/resume.pdf`;
+    a.click();
+}
 const menuBtn = document.getElementById('menuBtn');
 const menu = document.getElementById('menu');
 const closeBtn = document.getElementById('close-btn');
