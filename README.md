@@ -20,5 +20,10 @@ This is my personal developer portfolio website built using **EJS**, **Tailwind 
 - Dark mode ready (20% done)
 - Hosted on Vercel
 
+## 🎯 Goals
+- Apply Dark Theme to components (1/6 done)
+- Migrate the website to React.js (50% done)
+- Explore and implement Remix.run
+
 ## 📜 License
 This project is open-source and available under the MIT License.
