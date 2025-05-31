@@ -3,24 +3,29 @@ let form = document.querySelector('form');
 form.querySelectorAll('input, textarea').forEach(field => {
     field.addEventListener('input', () => {
         field.classList.remove('border-red-500');
+        form.querySelector(`#${field.id}Error`)?.classList.add('hidden');
     });
 });
+
 form.onsubmit = (e) => {
     e.preventDefault();
 
     let name = form.querySelector('#name');
     if (!name.value.trim()) {
         name.classList.add('border-red-500');
+        form.querySelector('#nameError').classList.remove('hidden')
         return;
     }
     let email = form.querySelector('#email');
     if (!email.value.trim()) {
         email.classList.add('border-red-500');
+        form.querySelector('#emailError').classList.remove('hidden')
         return;
     }
     let message = form.querySelector('#message');
     if (!message.value.trim()) {
         message.classList.add('border-red-500');
+        form.querySelector('#messageError').classList.remove('hidden')
         return;
     }
 
@@ -137,7 +142,7 @@ let achievements = [
         KeyAchievement: [
             "Created a carpooling web app to solve university commute issues.",
             "Developed backend using Express.js and MongoDB to handle ride creation, joining, and real-time updates via WebSockets.",
-            "Designed responsive frontend using EJS and Tailwind CSS for a unified login and dashboard experience.",
+            "Designed frontend using EJS and Tailwind CSS.",
             "Implemented ride history, live ride tracking, and notification system for cancellations"
         ]
     },
@@ -147,11 +152,11 @@ let achievements = [
         name: "Bachelor's in Software Engineering",
         place: "MUET, Jamshoro",
         url: "https://www.muet.edu.pk/",
-        shortDesc: "Completed 4-year undergraduate degree with a strong foundation in full-stack web development and software engineering principles.",
+        shortDesc: "Pursuing Bachelor’s with practical projects, covering areas like web development, AI, and more—graduating in 2026.",
         KeyAchievement: [
-            "Graduated with hands-on experience in MERN stack development, database design, and RESTful APIs.",
-            "Built multiple academic projects, including a real-time carpooling app, a weather dashboard, and a file-sharing platform.",
-            "Contributed to open-source projects and actively participated in hackathons and coding competitions.",
+            "Studied core and advanced software engineering topics with practicals, and hands-on projects.",
+            "Gained experience in DSA, Web Development, and Database Systems.",
+            "Developed skills in Software Project Management, Object-Oriented Programming, and Human-Computer Interaction.",
             "Developed strong problem-solving skills through regular coursework, labs, and collaborative team-based projects."
         ]
     },
@@ -161,12 +166,12 @@ let achievements = [
         name: "Web Development Course",
         place: "National Freelancing Training Program",
         url: "https://nftp.pitb.gov.pk/",
-        shortDesc: "Completed a comprehensive full-stack web development training with a focus on Node.js backend, RESTful APIs, and database integration.",
+        shortDesc: "Joined during my <b>First year</b> of university to learn basics of web development.",
         KeyAchievement: [
-            "Built foundational knowledge in JavaScript, Node.js, and Express.js.",
-            "Learned RESTful API design, server-side rendering, and web security best practices.",
-            "Worked with both SQL and NoSQL databases for backend integration.",
-            "Practiced version control using Git and gained exposure to real-world web development workflows."
+            "Learned the basics of HTML, CSS, and JavaScript.",
+            "Gained an understanding of how backend systems work behind the scenes.",
+            "Learned to use MySQL for managing databases and organizing data.",
+            "Created multiple projects to apply concepts learned from course."
         ]
     }
 ];
@@ -242,6 +247,7 @@ document.querySelectorAll('#menu a').forEach(a => {
     a.addEventListener('click', () => {
         menu.classList.add('hidden');
         menu.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
     });
 });
 

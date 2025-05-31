@@ -14,7 +14,12 @@ const webRouter = require('./router/web.router.js');
 app.use('/', webRouter);
 app.use('/api', emailRouter);
 
-app.use(express.static(path.resolve(__dirname, "public")));
+app.use(express.static(path.resolve(__dirname, "public"),{
+ setHeaders: (res, path) => {
+        res.status(200);
+        res.setHeader('Cache-Control', 'public, max-age=86400');
+    }
+}));
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`App is running at PORT:${PORT}`);
