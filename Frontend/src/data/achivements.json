@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "time": "Jan - Feb 2025",
+      "name": "Hack for Humanity - 2025",
+      "place": "Dev Post",
+      "url": "https://devpost.com/software/ride-sharing-website",
+      "shortDesc": "Ranked <b>20th overall</b> and won the <b>Public Voting Award</b> among 100+ participating teams.",
+      "KeyAchievement": [
+        "Created a carpooling web app to solve university commute issues.",
+        "Developed backend using Express.js and MongoDB to handle ride creation, joining, and real-time updates via WebSockets.",
+        "Designed frontend using EJS and Tailwind CSS.",
+        "Implemented ride history, live ride tracking, and notification system for cancellations"
+      ]
+    },
+    {
+      "id": 2,
+      "time": "2022 - Present",
+      "name": "Bachelor's in Software Engineering",
+      "place": "MUET, Jamshoro",
+      "url": "https://www.muet.edu.pk/",
+      "shortDesc": "Pursuing Bachelor’s with practical projects, covering areas like web development, AI, and more—graduating in 2026.",
+      "KeyAchievement": [
+        "Studied core and advanced software engineering topics with practicals, and hands-on projects.",
+        "Gained experience in DSA, Web Development, and Database Systems.",
+        "Developed skills in Software Project Management, Object-Oriented Programming, and Human-Computer Interaction.",
+        "Developed strong problem-solving skills through regular coursework, labs, and collaborative team-based projects."
+      ]
+    },
+    {
+      "id": 3,
+      "time": "2023",
+      "name": "Web Development Course",
+      "place": "National Freelancing Training Program",
+      "url": "https://nftp.pitb.gov.pk/",
+      "shortDesc": "Joined during my <b>First year</b> of university to learn basics of web development.",
+      "KeyAchievement": [
+        "Learned the basics of HTML, CSS, and JavaScript.",
+        "Gained an understanding of how backend systems work behind the scenes.",
+        "Learned to use MySQL for managing databases and organizing data.",
+        "Created multiple projects to apply concepts learned from course."
+      ]
+    }
+]

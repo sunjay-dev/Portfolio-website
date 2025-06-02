@@ -1,0 +1,66 @@
+[
+    {
+        "name": "JavaScript",
+        "icon": "javascript"
+    },
+    {
+        "name": "TypeScript",
+        "icon": "typescript-icon"
+    },
+    {
+        "name": "Tailwind CSS",
+        "icon": "tailwindcss-icon"
+    },
+    {
+        "name": "SASS",
+        "icon": "sass"
+    },
+    {
+        "name": "React.js",
+        "icon": "react"
+    },
+    {
+        "name": "Docker",
+        "icon": "docker-icon"
+    },
+    {
+        "name": "AWS",
+        "icon": "aws"
+    },
+    {
+        "name": "Git",
+        "icon": "git-icon"
+    },
+    {
+        "name": "Node.js",
+        "icon": "nodejs"
+    },
+    {
+        "name": "Express",
+        "icon": "express"
+    },
+    {
+        "name": "MongoDB",
+        "icon": "mongodb-icon"
+    },
+    {
+        "name": "MySQL",
+        "icon": "mysql"
+    },
+    {
+        "name": "Redis",
+        "icon": "redis"
+    },
+    {
+        "name": "Kafka",
+        "icon": "kafka"
+    },
+    {
+        "name": "Puppeteer",
+        "icon": "puppeteer"
+    },
+    {
+        "name": "WordPress",
+        "icon": "wordpress-icon"
+    }
+]
