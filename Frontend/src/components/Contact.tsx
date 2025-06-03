@@ -6,37 +6,36 @@ interface ErrorInterface {
   emailError: boolean,
   emailErrorMessage: string
   messageError: boolean,
-} 
+}
 
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [error, setError] = useState <ErrorInterface>({ nameError: false, emailError: false, emailErrorMessage: '', messageError: false })
+  const [error, setError] = useState<ErrorInterface>({ nameError: false, emailError: false, emailErrorMessage: '', messageError: false })
   const [isSucess, setIsSucess] = useState(false);
-  
-  const formSubmit = (e: React.FormEvent<HTMLFormElement>) =>  {
-    e.preventDefault();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (!name.trim()) {
       setError(prev => ({ ...prev, nameError: true }))
       return;
     }
-
     if (!email.trim()) {
       setError(prev => ({ ...prev, emailError: true, emailErrorMessage: "This Field is required" }))
       return;
-    } 
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-      setError(prev => ({ ...prev, emailError: true, emailErrorMessage: "Please enter a valid email address" }))
-    return;
     }
-    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError(prev => ({ ...prev, emailError: true, emailErrorMessage: "Please enter a valid email address" }))
+      return;
+    }
     if (!message.trim()) {
       setError(prev => ({ ...prev, messageError: true }))
       return;
     }
 
+    setIsSubmitting(true);
     fetch(import.meta.env.VITE_BACKEND_EMAIL_URL, {
       method: "POST",
       headers: {
@@ -56,9 +55,11 @@ export default function Contact() {
       setName('');
       setMessage('');
       setIsSucess(true);
-      setTimeout(()=> setIsSucess(false), 10000)
+      setIsSubmitting(false);
+      setTimeout(() => setIsSucess(false), 15000)
     }).catch(error => {
-      console.log(error)
+      console.log(error);
+      setIsSubmitting(false);
     })
   };
 
@@ -150,14 +151,15 @@ export default function Contact() {
 
         {/* form div */}
         <form onSubmit={e => formSubmit(e)} className="flex-1 sm:p-4 p-2 sm:pt-0 pl-0 pt-0">
-          <h3 className="text-2xl font-semibold text-[#3d3d3d]">Send Me a Message</h3> 
+          <h3 className="text-2xl font-semibold text-[#3d3d3d]">Send Me a Message</h3>
           {isSucess && <EmailSuccess />}
           <div className="flex flex-col space-y-4 mt-6">
             <div>
               <label className="text-sm" htmlFor="name">Your Name</label>
               {error.nameError && (<p className="text-red-500 my-1 text-sm flex">This field is required</p>)}
-              <input value={name} onChange={e => {setName(e.target.value)
-                if(error.nameError) setError(prev => ({...prev, nameError: false}))
+              <input value={name} onChange={e => {
+                setName(e.target.value)
+                if (error.nameError) setError(prev => ({ ...prev, nameError: false }))
               }} className={`w-full bg-white py-3 px-4 mt-1 rounded-md border placeholder:text-[0.9rem] ${error.nameError ? 'border-red-500' : 'border-none'}`} placeholder="Name" id="name"
                 autoComplete="name" />
             </div>
@@ -165,8 +167,9 @@ export default function Contact() {
               <label className="text-sm" htmlFor="email">Your Email</label>
               {error.emailError && (<p className="text-red-500 my-1 text-sm flex">{error.emailErrorMessage}</p>)}
               <input value={email}
-                onChange={e => {setEmail(e.target.value)
-                  if(error.emailError) setError(prev => ({...prev, emailError: false}))
+                onChange={e => {
+                  setEmail(e.target.value)
+                  if (error.emailError) setError(prev => ({ ...prev, emailError: false }))
                 }}
                 className={`w-full py-3 bg-white px-4 mt-1 rounded-md border placeholder:text-[0.9rem] ${error.emailError ? 'border-red-500' : 'border-none'}`}
                 placeholder="Example@gmail.com" id="email" autoComplete="email" />
@@ -174,19 +177,20 @@ export default function Contact() {
             <div>
               <label className="text-sm" htmlFor="message">Your Message</label>
               {error.messageError && (<p className="text-red-500 my-1 text-sm flex">This field is required</p>)}
-              <textarea value={message} onChange={e => {setMessage(e.target.value)
-              if(error.messageError) setError(prev => ({...prev, messageError: false}))
+              <textarea value={message} onChange={e => {
+                setMessage(e.target.value)
+                if (error.messageError) setError(prev => ({ ...prev, messageError: false }))
               }}
                 className={`w-full bg-white mt-1 py-3 px-4 rounded-md border placeholder:text-[0.9rem] resize-none min-h-[120px] ${error.messageError ? 'border-red-500' : 'border-none'}`}
                 placeholder="Hello Sunjay, I'd like to discuss a project..." id="message"></textarea>
             </div>
-            <button type="submit" className="w-full active:scale-[0.98] hover:opacity-95 font-medium bg-[#3d3d3d] text-white py-3 rounded-md flex items-center justify-center">
+            <button type="submit" disabled={isSubmitting} className="w-full active:scale-[0.98] hover:opacity-95 font-medium bg-[#3d3d3d] text-white py-3 rounded-md flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                 strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 mr-2">
                 <path d="m22 2-7 20-4-9-9-4Z"></path>
                 <path d="M22 2 11 13"></path>
               </svg>
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </div>
         </form>
