@@ -1,12 +1,18 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+
+interface ErrorInterface {
+  nameError: boolean,
+  emailError: boolean,
+  messageError: boolean
+} 
 
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [error, setError] = useState({ nameError: false, emailError: false, messageError: false })
+  const [error, setError] = useState <ErrorInterface>({ nameError: false, emailError: false, messageError: false })
 
-  const formSubmit = (e) =>  {
+  const formSubmit = (e: React.FormEvent<HTMLFormElement>) =>  {
     e.preventDefault();
 
     if (!name.trim()) {
@@ -143,7 +149,7 @@ export default function Contact() {
               <label className="text-sm" htmlFor="name">Your Name</label>
               {error.nameError && (<p className="text-red-500 my-1 text-sm flex">This field is required</p>)}
               <input value={name} onChange={e => {setName(e.target.value)
-                if(Error.name) setError(prev => ({...prev, nameError: false}))
+                if(error.nameError) setError(prev => ({...prev, nameError: false}))
               }} className={`w-full bg-white py-3 px-4 mt-1 rounded-md border placeholder:text-[0.9rem] ${error.nameError ? 'border-red-500' : 'border-none'}`} placeholder="Name" id="name"
                 autoComplete="name" />
             </div>
@@ -152,7 +158,7 @@ export default function Contact() {
               {error.emailError && (<p className="text-red-500 my-1 text-sm flex">This field is required</p>)}
               <input value={email}
                 onChange={e => {setEmail(e.target.value)
-                  if(Error.email) setError(prev => ({...prev, emailError: false}))
+                  if(error.emailError) setError(prev => ({...prev, emailError: false}))
                 }}
                 className={`w-full py-3 bg-white px-4 mt-1 rounded-md border placeholder:text-[0.9rem] ${error.emailError ? 'border-red-500' : 'border-none'}`}
                 placeholder="Example@gmail.com" id="email" autoComplete="email" />
@@ -161,7 +167,7 @@ export default function Contact() {
               <label className="text-sm" htmlFor="message">Your Message</label>
               {error.messageError && (<p className="text-red-500 my-1 text-sm flex">This field is required</p>)}
               <textarea value={message} onChange={e => {setMessage(e.target.value)
-              if(Error.message) setError(prev => ({...prev, messageError: false}))
+              if(error.messageError) setError(prev => ({...prev, messageError: false}))
               }}
                 className={`w-full bg-white mt-1 py-3 px-4 rounded-md border placeholder:text-[0.9rem] resize-none min-h-[120px] ${error.messageError ? 'border-red-500' : 'border-none'}`}
                 placeholder="Hello Sunjay, I'd like to discuss a project..." id="message"></textarea>

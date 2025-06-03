@@ -1,11 +1,10 @@
 import { useState, useMemo } from 'react';
-import AchivementName from './Cards/AchivementName';
-import AchievementCard from './Cards/AchievementCard';
+import AchivementName from './cards/AchivementName';
+import AchievementCard from './cards/AchievementCard';
 import achievements from '../data/achivements.json'
 export default function Achievements() {
 
   const [currentId, setCurrentId] = useState(1);
-
   const currentAchievement = useMemo(() => {
     return achievements.find(a => a.id === currentId);
   }, [currentId]);
@@ -22,7 +21,7 @@ export default function Achievements() {
         </div>
         {/* details */}
         <div className="col-span-2 p-6 rounded-sm space-y-3 bg-white" id="achievementsDetailsDiv">
-          <AchievementCard achievement={currentAchievement} />
+          {currentAchievement && <AchievementCard achievement={currentAchievement} />}
         </div>
       </div>
     </section>

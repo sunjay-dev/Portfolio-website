@@ -1,5 +1,18 @@
 import { Icon } from "@iconify/react";
-export default function AchievementCard({achievement}) {
+
+interface Achievement {
+  name: string,
+  time: string,
+  shortDesc: string,
+  KeyAchievement: string[],
+  url: string,
+  place: string
+}
+
+interface Props {
+  achievement: Achievement
+}
+export default function AchievementCard({achievement} : Props) {
   return (
     <>
       <div className="flex gap-2 items-center">

@@ -1,4 +1,3 @@
-import './index.css'
 import {Home, Toggle, Contact, About, Projects, Achievements, Skills, Footer} from './components'
 export default function App() {
   return (

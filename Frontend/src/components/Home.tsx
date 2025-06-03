@@ -1,4 +1,4 @@
-import Header from './Header'
+import Header from './Header.tsx'
 export default function Home() {
 
   function downloadResume() {
@@ -7,7 +7,7 @@ export default function Home() {
     a.download = "Sunjay_Kumar_Resume";
     a.click();
   }
-  function scrollMe(to){
+  function scrollMe(to:string){
     const a = document.createElement('a')
     a.href = `#${to}`;
     a.click();
