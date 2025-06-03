@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
+import EmailSuccess from './cards/EmailSuccess';
 
 interface ErrorInterface {
   nameError: boolean,
   emailError: boolean,
-  messageError: boolean
+  emailErrorMessage: string
+  messageError: boolean,
 } 
 
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [error, setError] = useState <ErrorInterface>({ nameError: false, emailError: false, messageError: false })
-
+  const [error, setError] = useState <ErrorInterface>({ nameError: false, emailError: false, emailErrorMessage: '', messageError: false })
+  const [isSucess, setIsSucess] = useState(false);
+  
   const formSubmit = (e: React.FormEvent<HTMLFormElement>) =>  {
     e.preventDefault();
 
@@ -21,10 +24,14 @@ export default function Contact() {
     }
 
     if (!email.trim()) {
-      setError(prev => ({ ...prev, emailError: true }))
+      setError(prev => ({ ...prev, emailError: true, emailErrorMessage: "This Field is required" }))
       return;
+    } 
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      setError(prev => ({ ...prev, emailError: true, emailErrorMessage: "Please enter a valid email address" }))
+    return;
     }
-
+    
     if (!message.trim()) {
       setError(prev => ({ ...prev, messageError: true }))
       return;
@@ -48,6 +55,8 @@ export default function Contact() {
       setEmail('');
       setName('');
       setMessage('');
+      setIsSucess(true);
+      setTimeout(()=> setIsSucess(false), 10000)
     }).catch(error => {
       console.log(error)
     })
@@ -112,7 +121,6 @@ export default function Contact() {
             </div>
           </div>
 
-
           <div className="mt-6">
             <h3 className="text-lg text-[#3d3d3d] font-semibold">Connect With Me</h3>
             <div className="flex mt-4 space-x-4">
@@ -142,8 +150,8 @@ export default function Contact() {
 
         {/* form div */}
         <form onSubmit={e => formSubmit(e)} className="flex-1 sm:p-4 p-2 sm:pt-0 pl-0 pt-0">
-          <h3 className="text-2xl font-semibold text-[#3d3d3d]">Send Me a Message</h3>
-
+          <h3 className="text-2xl font-semibold text-[#3d3d3d]">Send Me a Message</h3> 
+          {isSucess && <EmailSuccess />}
           <div className="flex flex-col space-y-4 mt-6">
             <div>
               <label className="text-sm" htmlFor="name">Your Name</label>
@@ -155,7 +163,7 @@ export default function Contact() {
             </div>
             <div>
               <label className="text-sm" htmlFor="email">Your Email</label>
-              {error.emailError && (<p className="text-red-500 my-1 text-sm flex">This field is required</p>)}
+              {error.emailError && (<p className="text-red-500 my-1 text-sm flex">{error.emailErrorMessage}</p>)}
               <input value={email}
                 onChange={e => {setEmail(e.target.value)
                   if(error.emailError) setError(prev => ({...prev, emailError: false}))
