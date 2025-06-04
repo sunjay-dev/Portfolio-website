@@ -56,7 +56,7 @@ export default function Contact() {
       setMessage('');
       setIsSucess(true);
       setIsSubmitting(false);
-      setTimeout(() => setIsSucess(false), 15000)
+      setTimeout(() => setIsSucess(false), 12000)
     }).catch(error => {
       console.log(error);
       setIsSubmitting(false);
@@ -64,16 +64,16 @@ export default function Contact() {
   };
 
   return (
-    <section className="min-w-dvw bg-[#f8f8f8] md:p-16 sm:p-8 p-6 pb-8" id="contact">
-      <h2 className="text-4xl font-bold text-[#3d3d3d]"><u> Get </u>In Touch</h2>
+    <section className="min-w-dvw bg-[#f8f8f8] text-[#3d3d3d] md:p-16 sm:p-8 p-6 pb-8 dark:bg-[#3d3d3d] dark:text-white" id="contact">
+      <h2 className="text-4xl font-bold "><u> Get </u>In Touch</h2>
       <div className="mt-14 grid sm:grid-flow-col items-start sm:col-span-2 gap-12">
         {/* contact div */}
         <div className="flex-1">
-          <h3 className="text-2xl font-semibold text-[#3d3d3d]">Contact Information</h3>
+          <h3 className="text-2xl font-semibold">Contact Information</h3>
 
           {/* email */}
           <div className="flex items-start mt-6 space-x-4">
-            <div className="text-[#3d3d3d] pt-1">
+            <div className="pt-1">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 strokeWidth="2">
                 <rect width="20" height="16" x="2" y="4" rx="2"></rect>
@@ -82,15 +82,15 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col">
-              <p className="text-lg font-medium text-[#3d3d3d]">Email</p>
-              <p className="text-[#3d3d3d]">collabwithsunjay@gmail.com</p>
+              <p className="text-lg font-medium">Email</p>
+              <p>collabwithsunjay@gmail.com</p>
             </div>
           </div>
 
           {/* Phone */}
 
           <div className="flex items-start mt-6 space-x-4">
-            <div className="text-[#3d3d3d] pt-1">
+            <div className="pt-1">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path
@@ -100,15 +100,15 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col">
-              <p className="text-lg font-medium text-[#3d3d3d]">Phone</p>
-              <p className="text-[#3d3d3d]">+92 309 9030247</p>
+              <p className="text-lg font-medium">Phone</p>
+              <p>+92 309 9030247</p>
             </div>
           </div>
 
           {/* Location */}
 
           <div className="flex items-start mt-6 space-x-4">
-            <div className="text-[#3d3d3d] pt-1">
+            <div className= "pt-1">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
@@ -117,16 +117,16 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col">
-              <p className="text-lg font-medium text-[#3d3d3d]">Location</p>
-              <p className="text-[#3d3d3d]">Hyderabad Sindh, Pakistan</p>
+              <p className="text-lg font-medium">Location</p>
+              <p>Hyderabad Sindh, Pakistan</p>
             </div>
           </div>
 
           <div className="mt-6">
-            <h3 className="text-lg text-[#3d3d3d] font-semibold">Connect With Me</h3>
+            <h3 className="text-lg font-semibold">Connect With Me</h3>
             <div className="flex mt-4 space-x-4">
 
-              <a href="https://github.com/sunjay-dev/" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent bg-gray-200 rounded-full">
+              <a href="https://github.com/sunjay-dev/" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent dark:hover:text-white dark:active:text-white bg-gray-200 text-[#3d3d3d] dark:bg-gray-50 rounded-full">
                 {/* github */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -136,7 +136,7 @@ export default function Contact() {
                   <path d="M9 18c-4.51 2-5-2-7-2"></path>
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/in/sunjayk" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent bg-gray-200 rounded-full">
+              <a href="https://www.linkedin.com/in/sunjayk" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent bg-gray-200 dark:hover:text-white dark:active:text-white dark:bg-gray-50 text-[#3d3d3d] rounded-full">
                 {/* linkedin */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -151,40 +151,40 @@ export default function Contact() {
 
         {/* form div */}
         <form onSubmit={e => formSubmit(e)} className="flex-1 sm:p-4 p-2 sm:pt-0 pl-0 pt-0">
-          <h3 className="text-2xl font-semibold text-[#3d3d3d]">Send Me a Message</h3>
+          <h3 className="text-2xl font-semibold">Send Me a Message</h3>
           {isSucess && <EmailSuccess />}
           <div className="flex flex-col space-y-4 mt-6">
             <div>
               <label className="text-sm" htmlFor="name">Your Name</label>
-              {error.nameError && (<p className="text-red-500 my-1 text-sm flex">This field is required</p>)}
+              {error.nameError && (<p className="text-red-500 my-1 text-sm flex dark:selection:text-red-500">This field is required</p>)}
               <input value={name} onChange={e => {
                 setName(e.target.value)
                 if (error.nameError) setError(prev => ({ ...prev, nameError: false }))
-              }} className={`w-full bg-white py-3 px-4 mt-1 rounded-md border placeholder:text-[0.9rem] ${error.nameError ? 'border-red-500' : 'border-none'}`} placeholder="Name" id="name"
+              }} className={`w-full bg-white py-3 px-4 mt-1 rounded-md border placeholder:text-[0.9rem] text-[#3d3d3d] ${error.nameError ? 'border-red-500 dark:border-[1.5px]' : 'border-none'}`} placeholder="Name" id="name"
                 autoComplete="name" />
             </div>
             <div>
               <label className="text-sm" htmlFor="email">Your Email</label>
-              {error.emailError && (<p className="text-red-500 my-1 text-sm flex">{error.emailErrorMessage}</p>)}
+              {error.emailError && (<p className="text-red-500 my-1 text-sm flex dark:selection:text-red-500">{error.emailErrorMessage}</p>)}
               <input value={email}
                 onChange={e => {
                   setEmail(e.target.value)
                   if (error.emailError) setError(prev => ({ ...prev, emailError: false }))
                 }}
-                className={`w-full py-3 bg-white px-4 mt-1 rounded-md border placeholder:text-[0.9rem] ${error.emailError ? 'border-red-500' : 'border-none'}`}
+                className={`w-full py-3 bg-white px-4 mt-1 rounded-md border placeholder:text-[0.9rem] text-[#3d3d3d] ${error.emailError ? 'border-red-500 dark:border-[1.5px]' : 'border-none'}`}
                 placeholder="Example@gmail.com" id="email" autoComplete="email" />
             </div>
             <div>
               <label className="text-sm" htmlFor="message">Your Message</label>
-              {error.messageError && (<p className="text-red-500 my-1 text-sm flex">This field is required</p>)}
+              {error.messageError && (<p className="text-red-500 my-1 text-sm flex dark:selection:text-red-500">This field is required</p>)}
               <textarea value={message} onChange={e => {
                 setMessage(e.target.value)
                 if (error.messageError) setError(prev => ({ ...prev, messageError: false }))
               }}
-                className={`w-full bg-white mt-1 py-3 px-4 rounded-md border placeholder:text-[0.9rem] resize-none min-h-[120px] ${error.messageError ? 'border-red-500' : 'border-none'}`}
+                className={`w-full bg-white mt-1 py-3 px-4 rounded-md border placeholder:text-[0.9rem] text-[#3d3d3d] resize-none min-h-[120px] ${error.messageError ? 'border-red-500 dark:border-[1.5px]' : 'border-none'}`}
                 placeholder="Hello Sunjay, I'd like to discuss a project..." id="message"></textarea>
             </div>
-            <button type="submit" disabled={isSubmitting} className="w-full active:scale-[0.98] hover:opacity-95 font-medium bg-[#3d3d3d] text-white py-3 rounded-md flex items-center justify-center">
+            <button type="submit" disabled={isSubmitting} className="w-full active:scale-[0.98] hover:opacity-95 font-medium bg-[#3d3d3d] text-white dark:bg-white dark:text-[#3d3d3d] py-3 rounded-md flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                 strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 mr-2">
                 <path d="m22 2-7 20-4-9-9-4Z"></path>
