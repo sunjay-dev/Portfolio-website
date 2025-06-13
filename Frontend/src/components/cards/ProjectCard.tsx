@@ -12,7 +12,7 @@ interface Props {
 }
 export default function ProjectCard({ project }: Props) {
   return (
-    <div onClick={() => window.open(`${project.url}`, '_blank')} className="cursor-pointer group active:scale-[1.02] mt-14 grid md:grid-cols-3 grid-cols-1 gap-4 md:gap-7 justify-between items-center transition duration-300 transform hover:scale-[1.02] sm:hover:shadow-lg sm:hover:bg-[#f8f8f8] dark:hover:bg-[#2f2f2f] sm:hover:p-4 sm:shadow-none shadow-lg sm:bg-transparent sm:p-0 p-4 rounded-xl">
+    <div onClick={() => window.open(`${project.url}`, '_blank')} className="cursor-pointer group active:scale-[1.02] mt-14 grid md:grid-cols-3 grid-cols-1 gap-4 md:gap-7 justify-between items-center transition duration-300 transform hover:scale-[1.02] sm:hover:shadow-lg sm:hover:bg-[#f8f8f8] dark:hover:bg-[#2a2a2a] sm:hover:p-4 sm:shadow-none shadow-lg sm:bg-transparent sm:p-0 p-4 rounded-xl">
       <img src={project.imgUrl} className="md:col-span-1 w-full max-h-44 object-cover select-none sm:p-0 p-2 rounded-xl sm:rounded-md" />
       <div className="md:col-span-2 space-y-2 p-2">
         <h3 className="text-xs font-medium">{project.time}</h3>

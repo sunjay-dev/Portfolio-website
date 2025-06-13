@@ -10,7 +10,7 @@ export default function Achievements() {
   }, [currentId]);
   
   return (
-    <section className="min-w-dvw text-[#3d3d3d] bg-[#f8f8f8] dark:bg-[#2f2f2f]  dark:text-white md:px-16 py-16 px-6" id="achievements">
+    <section className="min-w-dvw text-[#3d3d3d] bg-[#f8f8f8] dark:bg-[#2a2a2a]  dark:text-white md:px-16 py-16 px-6" id="achievements">
       <h2 className="text-4xl font-bold"><u>Achieve</u>ments</h2>
       {/* container */}
       <div className="mt-14 grid md:grid-cols-3 grid-cols-1 gap-7">

@@ -64,7 +64,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="min-w-dvw bg-[#f8f8f8] text-[#3d3d3d] md:p-16 sm:p-8 p-6 pb-8 dark:bg-[#3d3d3d] dark:text-white" id="contact">
+    <section className="min-w-dvw bg-[#f8f8f8] text-[#3d3d3d] md:p-16 sm:p-8 p-6 pb-8 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] dark:opacity-90" id="contact">
       <h2 className="text-4xl font-bold "><u> Get </u>In Touch</h2>
       <div className="mt-14 grid sm:grid-flow-col items-start sm:col-span-2 gap-12">
         {/* contact div */}

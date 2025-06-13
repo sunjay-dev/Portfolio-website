@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import skills from '../data/skills.json'
 export default function Skills() {
         return (
-        <section className="w-dvw bg-[#f8f8f8] text-[#3d3d3d] dark:bg-[#2f2f2f] dark:text-white md:px-16 pt-16 px-6 pb-32" id="skills">
+        <section className="w-dvw bg-[#f8f8f8] text-[#3d3d3d] dark:bg-[#2a2a2a] dark:text-white md:px-16 pt-16 px-6 pb-32" id="skills">
             <h2 className="text-4xl font-bold"><u>Tech</u>nical Skills</h2>
             <div className="mt-14 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-2 " id="skillsDiv">
                 {skills.map((skill, index) => (

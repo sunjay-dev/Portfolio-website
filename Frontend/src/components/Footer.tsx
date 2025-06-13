@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="bg-[#3d3d3d] p-10 [&_*]:selection:bg-gray-50 [&_*]:selection:text-[#3d3d3d]">
+        <footer className="bg-[#3d3d3d] dark:bg-[#1e1e1e] p-10 [&_*]:selection:bg-gray-50 [&_*]:selection:text-[#3d3d3d]">
             {/* logo and navigation section */}
             <div
                 className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between items-center mb-8 pt-4 pb-6 border-b border-[#6a6a6a]">
