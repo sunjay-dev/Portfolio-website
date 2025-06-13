@@ -10,8 +10,8 @@ export default function Achievements() {
   }, [currentId]);
   
   return (
-    <section className="min-w-dvw bg-[#f8f8f8] md:px-16 py-16 px-6" id="achievements">
-      <h2 className="text-4xl font-bold text-[#3d3d3d]"><u>Achieve</u>ments</h2>
+    <section className="min-w-dvw text-[#3d3d3d] bg-[#f8f8f8] dark:bg-[#2f2f2f]  dark:text-white md:px-16 py-16 px-6" id="achievements">
+      <h2 className="text-4xl font-bold"><u>Achieve</u>ments</h2>
       {/* container */}
       <div className="mt-14 grid md:grid-cols-3 grid-cols-1 gap-7">
         {/* names */}
@@ -20,7 +20,7 @@ export default function Achievements() {
           {achievements.map(achievement => <AchivementName key={achievement.id} achievement={achievement} isActive={achievement.id === currentId} setCurrentId={setCurrentId} />)}
         </div>
         {/* details */}
-        <div className="col-span-2 p-6 rounded-sm space-y-3 bg-white" id="achievementsDetailsDiv">
+        <div className="col-span-2 p-6 rounded-sm space-y-3 bg-white dark:bg-[#3d3d3d]" id="achievementsDetailsDiv">
           {currentAchievement && <AchievementCard achievement={currentAchievement} />}
         </div>
       </div>
