@@ -1,43 +1,43 @@
 [
+     {
+        "imgUrl": "/img/video-caller.png",
+        "name": "Video Caller",
+        "technology": [
+            "WebRTC",
+            "React",
+            "Socket.io",
+            "Redis",
+            "Material UI"
+        ],
+        "time": "Jun 2025 - Present",
+        "url": "https://call.sunjay.xyz",
+        "description": "A web app for instant video calls with screen sharing and real-time room creation, using WebRTC and Socket.io with a smooth React interface."
+    },
     {
-            "imgUrl": "/img/uniRide.png",
-            "name": "UniRide - Carpooling Website",
-            "technology": [
+        "imgUrl": "/img/uniRide.png",
+        "name": "UniRide - Carpooling Website",
+        "technology": [
             "Socket.io",
             "Passport.js",
             "Resend",
             "Tailwind CSS",
             "MongoDB"
         ],
-            "time": "Jan - Feb 2025",
-            "url": "https://uniride.sunjay.xyz",
-            "description": "UniRide is a university-based carpooling website that connects students for shared rides. Users can create, join, or cancel rides in real-time, view ride history, and receive instant updates."
+        "time": "Jan - Feb 2025",
+        "url": "https://uniride.sunjay.xyz",
+        "description": "UniRide is a university-based carpooling website that connects students for shared rides. Users can create, join, or cancel rides in real-time, view ride history, and receive instant updates."
     },
     {
-            "imgUrl": "/img/weatherWeb.png",
-            "name": "Weather Web using Redis",
-            "technology": [
+        "imgUrl": "/img/weatherWeb.png",
+        "name": "Weather Web using Redis",
+        "technology": [
             "Redis",
             "Express.js",
             "EJS",
             "Vercel"
         ],
-            "time": "Mar 2025",
-            "url": "https://weather.sunjay.xyz",
-            "description": "It helps to quickly check the current weather of any city. It shows real-time information in a clean and simple interface, making it easy to plan your day."
-    },
-    {
-            "imgUrl": "/img/urlShortner.png",
-            "name": "URL Shortner",
-            "technology": [
-            "Passport.js",
-            "Express.js",
-            "EJS",
-            "MongoDB",
-            "Vercel"
-        ],
-            "time": "Dec 2024",
-            "url": "https://go.sunjay.xyz",
-            "description": "A user-friendly tool that transforms lengthy links into concise, easy-to-share ones. It also tracks each short link accessed, along with other useful details to help you manage your links efficiently."
+        "time": "Mar 2025",
+        "url": "https://weather.sunjay.xyz",
+        "description": "It helps to quickly check the current weather of any city. It shows real-time information in a clean and simple interface, making it easy to plan your day."
     }
 ]
