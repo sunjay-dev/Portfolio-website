@@ -25,7 +25,8 @@
     },
     {
         "name": "AWS",
-        "icon": "aws"
+        "icon": "aws",
+        "dark": "skill-icons:aws-dark"
     },
     {
         "name": "Git",
@@ -33,11 +34,13 @@
     },
     {
         "name": "Node.js",
-        "icon": "nodejs"
+        "icon": "nodejs",
+        "dark": "logos:nodejs-icon-alt"
     },
     {
         "name": "Express",
-        "icon": "express"
+        "icon": "express",
+        "dark": "simple-icons:express"
     },
     {
         "name": "MongoDB",
@@ -53,14 +56,17 @@
     },
     {
         "name": "Kafka",
-        "icon": "kafka"
+        "icon": "kafka",
+        "dark": "simple-icons:apachekafka"
     },
     {
         "name": "Puppeteer",
-        "icon": "puppeteer"
+        "icon": "puppeteer",
+        "dark": "material-icon-theme:puppeteer"
     },
     {
         "name": "WordPress",
-        "icon": "wordpress-icon"
+        "icon": "wordpress-icon",
+        "dark": "simple-icons:wordpress"
     }
 ]
