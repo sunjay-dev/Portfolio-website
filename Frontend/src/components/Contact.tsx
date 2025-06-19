@@ -126,7 +126,7 @@ export default function Contact() {
             <h3 className="text-lg font-semibold">Connect With Me</h3>
             <div className="flex mt-4 space-x-4">
 
-              <a href="https://github.com/sunjay-dev/" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent dark:hover:text-white dark:active:text-white bg-gray-200 text-[#3d3d3d] dark:bg-gray-50 rounded-full">
+              <a href="https://github.com/sunjay-dev/" rel="noopener noreferrer" aria-label="Visit Sunjay Kumar's Github profile" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent dark:hover:text-white dark:active:text-white bg-gray-200 text-[#3d3d3d] dark:bg-gray-50 rounded-full">
                 {/* github */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -136,7 +136,7 @@ export default function Contact() {
                   <path d="M9 18c-4.51 2-5-2-7-2"></path>
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/in/sunjayk" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent bg-gray-200 dark:hover:text-white dark:active:text-white dark:bg-gray-50 text-[#3d3d3d] rounded-full">
+              <a href="https://www.linkedin.com/in/sunjayk" rel="noopener noreferrer" aria-label="Visit Sunjay Kumar's Linkedin profile" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent bg-gray-200 dark:hover:text-white dark:active:text-white dark:bg-gray-50 text-[#3d3d3d] rounded-full">
                 {/* linkedin */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

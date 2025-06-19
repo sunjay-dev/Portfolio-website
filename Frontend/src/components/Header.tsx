@@ -34,10 +34,10 @@ export default function Header() {
                 <a href="#achievements" className="hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-200">Achievements</a>
                 <a href="#contact" className="hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-200">Contact</a>
             </div>
-            <button onClick={() => openMenu()} className="md:hidden dark:text-white">
+            <button aria-label="Open menu" onClick={() => openMenu()} className="md:hidden dark:text-white">
                 {/* Hamburger */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu h-6 w-6">
+                    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu h-6 w-6" aria-hidden="true" focusable="false" >
                     <line x1="4" x2="20" y1="12" y2="12"></line>
                     <line x1="4" x2="20" y1="6" y2="6"></line>
                     <line x1="4" x2="20" y1="18" y2="18"></line>
@@ -46,12 +46,14 @@ export default function Header() {
 
             <div id="menu"
                 className={`fixed inset-0 text-[#3d3d3d] bg-[#f8f8f8] dark:bg-[#3d3d3d] dark:text-white flex-col items-center justify-center space-y-6 text-xl z-50 ${menuStatus ? 'flex' : 'hidden'}`}>
-                <button onClick={() => closeMenu()} id="close-btn" className="absolute top-7 right-6">
+                <button onClick={() => closeMenu()} aria-label="Close menu" id="close-btn" className="absolute top-7 right-6">
                     <svg
                         viewBox="0 0 16 16"
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
+                        aria-hidden="true"
+                        focusable="false" 
                     >
                         <rect transform="rotate(45)" x="4.31" y="-1" width="14" height="2" />
                         <rect transform="rotate(-45)" x="-7" y="10.31" width="14" height="2" />

@@ -13,7 +13,7 @@ export default function Home() {
     a.click();
   }
   return (
-    <section className="max-w-dvw max-h-dvh p-2 relative bg-[url(/img/homeBg.jpg)] bg-cover bg-center" id="home">
+    <section className="max-w-dvw max-h-dvh p-2 relative bg-[url(/img/homeBg.webp)] bg-cover bg-center" id="home">
         <div className="absolute inset-0 bg-white opacity-95 z-0 sm:dark:opacity-85 dark:opacity-90 dark:bg-black"></div>
         <div className="relative z-10 sm:px-6 px-4 py-4 h-full flex flex-col justify-start">
         <Header />
@@ -48,7 +48,7 @@ export default function Home() {
 
       <div className="flex justify-center dark:text-white space-x-6 mt-14 items-center select-none">
         {/* github */}
-        <a href="https://github.com/sunjay-dev/" target="_blank">
+        <a href="https://github.com/sunjay-dev/" target="_blank" rel="noopener noreferrer" aria-label="Visit Sunjay Kumar's github profile">
           <svg xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6 opacity-70 hover:opacity-50 cursor-pointer dark:opacity-90 dark:hover:opacity-70"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
@@ -60,7 +60,7 @@ export default function Home() {
           </svg>
         </a>
         {/* linkedin */}
-        <a href="https://www.linkedin.com/in/sunjayk" target="_blank">
+        <a href="https://www.linkedin.com/in/sunjayk" target="_blank" rel="noopener noreferrer" aria-label="Visit Sunjay Kumar's Linkedin profile">
           <svg xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6 opacity-70 hover:opacity-50 cursor-pointer dark:opacity-90 dark:hover:opacity-70"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
@@ -71,7 +71,7 @@ export default function Home() {
           </svg>
         </a>
         {/* Leetcode */}
-        <a href="https://leetcode.com/u/sunjaykumar/" target="_blank">
+        <a href="https://leetcode.com/u/sunjaykumar/" target="_blank" rel="noopener noreferrer" aria-label="Visit Sunjay Kumar's LeetCode profile">
           <svg fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
           className="w-6 h-6 opacity-70 hover:opacity-50 cursor-pointer dark:opacity-90 dark:hover:opacity-70">
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>

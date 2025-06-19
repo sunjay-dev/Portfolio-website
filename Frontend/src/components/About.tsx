@@ -45,7 +45,7 @@ export default function About() {
           })}
 
           {/* Center Avatar */}
-          <img src="/img/me.jpg" alt="Avatar"
+          <img src="/img/me.webp" alt="Avatar"
             className="absolute top-1/2 left-1/2 w-36 h-36 sm:w-52 sm:h-52 -translate-x-1/2 -translate-y-1/2 z-0 rounded-full object-cover shadow-lg border-4 border-white dark:border-[#2f2f2f]" />
         </div>
       </div>

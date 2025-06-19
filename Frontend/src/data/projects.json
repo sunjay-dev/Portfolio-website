@@ -1,6 +1,6 @@
 [
      {
-        "imgUrl": "/img/video-caller.png",
+        "imgUrl": "/img/video-caller.webp",
         "name": "Video Caller",
         "technology": [
             "WebRTC",
@@ -14,7 +14,7 @@
         "description": "A web app for instant video calls with screen sharing and real-time room creation, using WebRTC and Socket.io with a smooth React interface."
     },
     {
-        "imgUrl": "/img/uniRide.png",
+        "imgUrl": "/img/uniRide.webp",
         "name": "UniRide - Carpooling Website",
         "technology": [
             "Socket.io",
@@ -28,7 +28,7 @@
         "description": "UniRide is a university-based carpooling website that connects students for shared rides. Users can create, join, or cancel rides in real-time, view ride history, and receive instant updates."
     },
     {
-        "imgUrl": "/img/weatherWeb.png",
+        "imgUrl": "/img/weatherWeb.webp",
         "name": "Weather Web using Redis",
         "technology": [
             "Redis",
