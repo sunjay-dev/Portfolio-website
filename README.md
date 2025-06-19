@@ -18,12 +18,13 @@ This is my personal developer portfolio website built using **REACT JS**, **Tail
 - Clean UI built with Tailwind CSS
 - simple Animations
 - Home,About me, skills, projects , and contact section
-- Dark mode ready (40% done)
+- Dark mode ready
 - Hosted on Vercel
 
 ## 🎯 Goals
-- Apply Dark Theme to components (2/6 done)
+- <del> Apply Dark Theme to components (2/6 done) </del>
 - <del> Migrate the website to React.js (100% done)</del>
+- Add 3d Feature using Three.js
 - Explore and implement Remix.run
 
 ## 📜 License

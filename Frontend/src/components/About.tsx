@@ -1,3 +1,6 @@
+import { Icon } from "@iconify/react";
+import aboutIcons from "../data/about.json";
+
 export default function About() {
   return (
     <section className="min-w-dvw bg-white text-[#3d3d3d] dark:bg-[#1e1e1e] dark:text-white md:px-16 py-16 px-0 sm:px-6" id="about">
@@ -29,50 +32,17 @@ export default function About() {
             className="absolute border border-dashed border-gray-300 dark:border-zinc-500 rounded-full w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           </div>
 
-          {/* Icons */}
-
-          {/* React Icon */}
-          <div className="absolute px-3 py-3 top-[10%] left-[50%] bg-white dark:bg-[#2f2f2f] rounded-full shadow-lg animate-float"
-            style={{ transform: 'translate(-50%, 0)' }}>
-            <img src="/svg/techIcons/react.svg" className="w-7 h-7 sm:w-8 sm:h-8" alt="React" />
+          {/* icons */}
+          {aboutIcons.map((icon) => {
+            return (
+            <div key={icon.name} className="absolute px-3 py-3 bg-white dark:bg-[#2f2f2f] rounded-full shadow-lg animate-float"
+            style={{ animationDelay: icon.delay, ...icon.position }}>
+            <div className={`w-7 h-7 sm:w-8 sm:h-8 ${icon.size || ''}`}>
+              <Icon icon={icon.icon} width="100%" height="100%" />
+            </div>
           </div>
-
-          {/* JavaScript Icon */}
-          <div className="absolute px-3 py-3 top-[50%] right-[10%] bg-white dark:bg-[#2f2f2f] rounded-full shadow-lg animate-float"
-            style={{ animationDelay: '0.5s', transform: 'translate(50%, -50%)' }}>
-            <img src="/svg/techIcons/javascript.svg" className="w-7 h-7 sm:w-8 sm:h-8" alt="JavaScript" />
-          </div>
-
-          {/* TypeScript Icon */}
-          <div className="absolute px-3 py-3 bottom-[10%] left-[55%] bg-white dark:bg-[#2f2f2f] rounded-full shadow-lg animate-float"
-            style={{ animationDelay: '1s', transform: 'translate(-50%, 0)' }}>
-            <img src="/svg/techIcons/typescript.svg" className="w-7 h-7 sm:w-8 sm:h-8" alt="TypeScript" />
-          </div>
-
-          {/* Node.js Icon */}
-          <div className="absolute px-3 py-3 bg-white dark:bg-[#2f2f2f] top-[15%] left-[20%] rounded-full shadow-lg animate-float"
-            style={{ animationDelay: '0.7s' }}>
-            <img src="/svg/techIcons/nodejs.svg" className="w-7 h-7 sm:w-8 sm:h-8" alt="Node.js" />
-          </div>
-
-          {/* Docker Icon */}
-          <div className="absolute px-2 py-2 top-[25%] right-[5%] bg-white dark:bg-[#2f2f2f] rounded-full shadow-lg animate-float"
-            style={{ animationDelay: '1.3s' }}>
-            <img src="/svg/techIcons/docker.svg" className="w-9 h-9 sm:w-10 sm:h-10" alt="Docker" />
-          </div>
-
-          {/* MongoDB Icon */}
-          <div className="absolute px-3 py-3 top-[50%] left-[15%] bg-white dark:bg-[#2f2f2f] rounded-full shadow-lg animate-float"
-            style={{ animationDelay: '0.9s', transform: 'translateY(-50%)' }}>
-            <img src="/svg/techIcons/mongodb.svg" className="w-7 h-7 sm:w-8 sm:h-8" alt="MongoDB" />
-          </div>
-
-          {/* Tailwind CSS Icon */}
-          <div className="absolute px-3 py-3 bottom-[10%] left-[23%] bg-white dark:bg-[#2f2f2f] rounded-full shadow-lg animate-float"
-            style={{ animationDelay: '1.5s', transform: 'translateX(-50%)' }}>
-            <img src="/svg/techIcons/tailwindcss.svg" className="w-7 h-7 sm:w-8 sm:h-8" alt="Tailwind CSS" />
-          </div>
-
+          )
+          })}
 
           {/* Center Avatar */}
           <img src="/img/me.jpg" alt="Avatar"

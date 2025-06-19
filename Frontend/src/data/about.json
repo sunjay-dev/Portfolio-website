@@ -1,0 +1,71 @@
+[
+  {
+    "name": "React",
+    "icon": "devicon:react",
+    "position": {
+      "top": "10%",
+      "left": "50%",
+      "transform": "translate(-50%, 0)"
+    },
+    "delay": "0s"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "devicon:javascript",
+    "position": {
+      "top": "50%",
+      "right": "10%",
+      "transform": "translate(50%, -50%)"
+    },
+    "delay": "0.5s"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "devicon:typescript",
+    "position": {
+      "bottom": "10%",
+      "left": "55%",
+      "transform": "translate(-50%, 0)"
+    },
+    "delay": "1s"
+  },
+  {
+    "name": "Node.js",
+    "icon": "devicon:nodejs",
+    "position": {
+      "top": "15%",
+      "left": "20%"
+    },
+    "delay": "0.7s"
+  },
+  {
+    "name": "Docker",
+    "icon": "devicon:docker",
+    "position": {
+      "top": "25%",
+      "right": "5%"
+    },
+    "delay": "1.3s",
+    "size": "scale-125"
+  },
+  {
+    "name": "MongoDB",
+    "icon": "devicon:mongodb",
+    "position": {
+      "top": "50%",
+      "left": "15%",
+      "transform": "translateY(-50%)"
+    },
+    "delay": "0.9s"
+  },
+  {
+    "name": "Tailwind CSS",
+    "icon": "devicon:tailwindcss",
+    "position": {
+      "bottom": "10%",
+      "left": "23%",
+      "transform": "translateX(-50%)"
+    },
+    "delay": "1.5s"
+  }
+]
