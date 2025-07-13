@@ -4,7 +4,7 @@ export default function Home() {
   function downloadResume() {
     const a = document.createElement('a')
     a.href = '/pdf/resume.pdf';
-    a.download = "Sunjay_Kumar_Resume";
+    a.download = "Sunjay_Kumar_Resume.pdf";
     a.click();
   }
   function scrollMe(to:string){
