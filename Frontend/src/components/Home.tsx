@@ -13,7 +13,7 @@ export default function Home() {
     a.click();
   }
   return (
-    <section className="max-w-dvw max-h-dvh p-2 relative bg-[url(/img/homeBg.webp)] bg-cover bg-center" id="home">
+    <section className="w-dvw h-dvh p-2 relative bg-[url(/img/homeBg.webp)] bg-cover bg-center" id="home">
         <div className="absolute inset-0 bg-white opacity-95 z-0 sm:dark:opacity-85 dark:opacity-90 dark:bg-black"></div>
         <div className="relative z-10 sm:px-6 px-4 py-4 h-full flex flex-col justify-start">
         <Header />
