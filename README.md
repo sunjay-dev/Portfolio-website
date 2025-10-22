@@ -14,12 +14,11 @@ This is my personal developer portfolio website built using **REACT JS**, **Tail
 
 ## 🚀 Features
 
-- Responsive design (mobile-first)
+- Auto fetches new projects from GitHub
+- Responsive design
 - Clean UI built with Tailwind CSS
 - simple Animations
-- Home,About me, skills, projects , and contact section
 - Dark mode ready
-- Hosted on Vercel
 
 ## 📦 Deployment (Run It Yourself)
 

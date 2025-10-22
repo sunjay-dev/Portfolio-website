@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { Resend } = require('resend');
 
 async function sendemail(name, email, message) {

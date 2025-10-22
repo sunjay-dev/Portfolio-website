@@ -14,8 +14,9 @@ export default function Projects() {
     };
     const [projects, setProjects] = useState<Repo[]>([]);
     useEffect(() => {
-        const UserName = import.meta.env.VITE_GITHUB_USERNAME;
-        fetch(`https://api.github.com/users/${UserName}/repos?sort=created&direction=desc&per_page=10`)
+        const userName = import.meta.env.VITE_GITHUB_USERNAME;
+        const repoCount = import.meta.env.VITE_GITHUB_REPOS_FETCH_LIMIT || 20;
+        fetch(`https://api.github.com/users/${userName}/repos?sort=created&direction=desc&per_page=${repoCount}`)
             .then(res => {
                 if (!res.ok)
                     throw new Error('Something went Wrong!')
