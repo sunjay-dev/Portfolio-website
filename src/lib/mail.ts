@@ -22,7 +22,7 @@ export async function sendemail({ name, email, message }: Props) {
   try {
     const { error } = await resend.emails.send({
       from: process.env.SENDER_EMAIL as string,
-      to: process.env.RECIVING_EMAIL as string,
+      to: process.env.RECEIVING_EMAIL as string,
       subject: `Message from ${name} from Portfolio Website`,
       html: emailTemplate({ name, email, message }),
     });

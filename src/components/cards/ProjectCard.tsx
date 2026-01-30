@@ -47,15 +47,15 @@ export default function ProjectCard({ project }: Props) {
     <Link
       href={project.homepage || project.html_url}
       target="_blank"
-      className="cursor-pointer group active:scale-[1.02] mt-14 grid md:grid-cols-3 grid-cols-1 gap-4 md:gap-7 justify-between items-center transition duration-300 transform hover:scale-[1.02] sm:hover:shadow-lg sm:hover:bg-[#f8f8f8] dark:hover:bg-[#2a2a2a] dark:active:bg-[#2a2a2a] sm:hover:p-4 sm:shadow-none shadow-lg sm:bg-transparent sm:p-0 p-4 rounded-xl"
+      className="cursor-pointer group active:scale-[1.02] mt-14 grid md:grid-cols-3 grid-cols-1 gap-4 md:gap-7 justify-between items-center transition-all duration-300 ease-in-out transform hover:scale-[1.01] hover:bg-gray-50/50 dark:hover:bg-[#2a2a2a]/50 p-4 rounded-xl border border-transparent hover:border-gray-200/50 dark:hover:border-white/10 hover:shadow-lg"
     >
-      <div className="relative md:col-span-1 w-full h-44 sm:h-44">
+      <div className="relative md:col-span-1 w-full h-44 sm:h-44 overflow-hidden rounded-xl shadow-sm">
         <Image
           src={GenerateImageUrl(project.full_name)}
           alt={project.name}
           fill
           loading="lazy"
-          className="object-cover select-none sm:p-0 p-2 shadow rounded-xl sm:rounded-md"
+          className="object-cover select-none transition-transform duration-500 ease-in-out group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>

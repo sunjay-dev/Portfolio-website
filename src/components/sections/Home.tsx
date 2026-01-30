@@ -26,13 +26,13 @@ export default function Home() {
             Get in Touch
           </Link>
 
-          <Link
+          <a
             href="/pdf/resume.pdf"
             download={`${User.name.split(" ").join("_")}_Resume.pdf`}
             className="max-w-3xl py-3 px-6 flex items-center gap-2 box-border font-medium border-[#3d3d3d] border-2 rounded-md hover:bg-[#3d3d3d] hover:text-white active:text-white active:bg-[#3d3d3d] transition-transform dark:border-white dark:hover:bg-white dark:hover:text-[#3d3d3d] dark:active:bg-white dark:active:text-[#3d3d3d] dark:text-white"
           >
             <Icon icon="bx:file" className="w-5.5 h-5.5 dark:opacity-90 dark:hover:opacity-70" /> Resume
-          </Link>
+          </a>
         </div>
 
         <div className="flex justify-center dark:text-white space-x-6 mt-14 items-center select-none">

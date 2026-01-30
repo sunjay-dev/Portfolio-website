@@ -26,7 +26,7 @@ Create a `.env` file :
 
 ```env
 SENDER_EMAIL=your-sender-email@example.com
-RECIVING_EMAIL=your-receiving-email@example.com
+RECEIVING_EMAIL=your-receiving-email@example.com
 RESEND_EMAIL_API_KEY=your-resend-api-key
 ```
 
