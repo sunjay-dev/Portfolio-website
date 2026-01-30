@@ -1,16 +1,10 @@
 # 🌐 Sunjay Kumar – Personal Portfolio
 
-This is my personal developer portfolio website built using **REACT JS**, **Tailwind CSS**, and **NODE JS**. It showcases my projects, skills, and experience as a full-stack software engineer.
+This is my personal developer portfolio website built using **Next JS**. It showcases my projects, skills, and experience as a full-stack software engineer.
 
 ## 🛠 Tech Stack USED IN WEBSITE
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) 
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) 
-![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![Next.js](https://img.shields.io/badge/next_js-%2320232a.svg?style=for-the-badge&logo=nextdotjs) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## 🚀 Features
 
@@ -24,27 +18,16 @@ This is my personal developer portfolio website built using **REACT JS**, **Tail
 
 To run this portfolio locally:
 
-### 🔐 Frontend `.env`
+> ✏️ To update portfolio content (like your name, skills, projects, etc.), edit the files inside the `src/data/` folder.
 
-Create a `.env` file inside the `frontend/` folder:
+### 🔐 `.env`
 
-```env
-VITE_BACKEND_EMAIL_URL=http://localhost:3000/api/email
-VITE_GITHUB_USERNAME=your-github-username
-```
-
-> ✏️ To update portfolio content (like your name, skills, projects, etc.), edit the files inside the `frontend/src/data/` folder.
-
-### 🔐 Backend `.env`
-
-Create a `.env` file inside the `backend/` folder:
+Create a `.env` file :
 
 ```env
-PORT=3000
 SENDER_EMAIL=your-sender-email@example.com
 RECIVING_EMAIL=your-receiving-email@example.com
 RESEND_EMAIL_API_KEY=your-resend-api-key
-FRONT_END_URL=http://localhost:5173
 ```
 
 ### ▶️ Running Locally
@@ -58,42 +41,27 @@ FRONT_END_URL=http://localhost:5173
 
 2. **Install dependencies**
 
-   * For frontend:
-
-     ```bash
-     cd Frontend
-     npm install
-     ```
-
-   * For backend:
-
-     ```bash
-     cd backend
-     npm install
-     ```
-
-3. **Run backend**
-
    ```bash
-   npm run dev
+     pnpm install
    ```
 
-4. **Run frontend**
+3. **Run Project**
 
    ```bash
-   cd ../frontend
-   npm run dev
+   pnpm run dev
    ```
 
-Your portfolio should now be live at: `http://localhost:5173`
+Your portfolio should now be live at: `http://localhost:3000`
 
 ---
 
 ## 🎯 Goals
+
 - <del> Apply Dark Theme to components (6/6 done) </del>
 - <del> Migrate the website to React.js (100% done)</del>
+- <del> Explore and implement Next.js </del>
 - Add 3d Feature using Three.js
-- Explore and implement Remix.run
 
 ## 📜 License
+
 This project is open-source and available under the MIT License.

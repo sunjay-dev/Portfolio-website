@@ -1,0 +1,24 @@
+{
+  "name": "Sunjay Kumar",
+  "title": "Full Stack Developer",
+  "intro": "Building robust, scalable, and efficient web solutions",
+  "location": "Hyderabad Sindh, Pakistan",
+  "contact": {
+    "phone": "+92 309 9030247",
+    "email": "collabwithsunjay@gmail.com"
+  },
+  "social": {
+    "github": {
+      "userName": "sunjay-dev",
+      "url": "https://github.com/sunjay-dev",
+      "reposFetchLimit": 20
+    },
+    "linkedin": "https://www.linkedin.com/in/sunjayk",
+    "leetcode": "https://leetcode.com/u/sunjaykumar"
+  },
+  "about": [
+    "I am a passionate software engineer specializing in full-stack development. I love writing clean, efficient code and building amazing user experiences.",
+    "Skilled in JavaScript, Node.js, React, and databases like MongoDB, and MySQL, I enjoy working on innovative projects that solve real-world problems.",
+    "Always eager to learn new technologies and improve my skills through collaborative teamwork and challenging tasks."
+  ]
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "JavaScript",
+    "icon": "logos:javascript"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "logos:typescript-icon"
+  },
+  {
+    "name": "Tailwind CSS",
+    "icon": "logos:tailwindcss-icon"
+  },
+  {
+    "name": "SASS",
+    "icon": "logos:sass"
+  },
+  {
+    "name": "React.js",
+    "icon": "logos:react"
+  },
+  {
+    "name": "Docker",
+    "icon": "logos:docker-icon"
+  },
+  {
+    "name": "AWS",
+    "icon": "logos:aws",
+    "dark": "skill-icons:aws-dark"
+  },
+  {
+    "name": "Git",
+    "icon": "logos:git-icon"
+  },
+  {
+    "name": "Node.js",
+    "icon": "logos:nodejs",
+    "dark": "logos:nodejs-icon-alt"
+  },
+  {
+    "name": "Express",
+    "icon": "logos:express",
+    "dark": "simple-icons:express"
+  },
+  {
+    "name": "MongoDB",
+    "icon": "logos:mongodb-icon"
+  },
+  {
+    "name": "MySQL",
+    "icon": "logos:mysql"
+  },
+  {
+    "name": "Redis",
+    "icon": "logos:redis"
+  },
+  {
+    "name": "Kafka",
+    "icon": "logos:kafka",
+    "dark": "simple-icons:apachekafka"
+  },
+  {
+    "name": "Puppeteer",
+    "icon": "logos:puppeteer",
+    "dark": "material-icon-theme:puppeteer"
+  },
+  {
+    "name": "WordPress",
+    "icon": "logos:wordpress-icon",
+    "dark": "simple-icons:wordpress"
+  }
+]

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sunjay.xyz/sitemap.xml
