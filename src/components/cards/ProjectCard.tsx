@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/Icon";
+import { TECH_MAPPING } from "@/data/tech_mapping";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,6 +17,7 @@ type projectInterface = {
 type Props = {
   project: projectInterface;
 };
+
 export default function ProjectCard({ project }: Props) {
   function GenerateImageUrl(repo: string) {
     return `https://raw.githubusercontent.com/${repo}/main/assets/preview.webp`;
@@ -42,6 +44,20 @@ export default function ProjectCard({ project }: Props) {
     if (sameMonth) return startStr;
 
     return `${startStr} – ${endStr}`;
+  }
+
+  function formatTechName(tech: string): string {
+    const lowerTech = tech.toLowerCase();
+    if (TECH_MAPPING[lowerTech]) {
+      return TECH_MAPPING[lowerTech];
+    }
+    return tech
+      .split("-")
+      .map((word) => {
+        const lowerWord = word.toLowerCase();
+        return TECH_MAPPING[lowerWord] || (word.charAt(0).toUpperCase() + word.slice(1));
+      })
+      .join(" ");
   }
   return (
     <Link
@@ -78,9 +94,9 @@ export default function ProjectCard({ project }: Props) {
           .map((tech) => (
             <button
               key={tech}
-              className="mr-1 px-3 py-1 rounded-full text-xs leading-5 bg-[#3d3d3d] text-gray-50 dark:text-[#3d3d3d] dark:bg-gray-50 capitalize"
+              className="mr-1 px-3 py-1 rounded-full text-xs leading-5 bg-[#3d3d3d] text-gray-50 dark:text-[#3d3d3d] dark:bg-gray-50"
             >
-              {tech.replaceAll("-", " ")}
+              {formatTechName(tech)}
             </button>
           ))}
       </div>
