@@ -185,4 +185,7 @@ export const TECH_MAPPING: Record<string, string> = {
     chartjs: "chart.js",
     "next-auth": "NextAuth.js",
     nextauth: "NextAuth.js",
+    ai: "AI",
+    ui: "UI",
+    ux: "UX",
 };

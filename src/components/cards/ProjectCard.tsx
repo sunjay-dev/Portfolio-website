@@ -1,5 +1,6 @@
 import Icon from "@/components/ui/Icon";
 import { TECH_MAPPING } from "@/data/tech_mapping";
+import GithubLink from "@/components/ui/GithubLink";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -59,47 +60,60 @@ export default function ProjectCard({ project }: Props) {
       })
       .join(" ");
   }
+
   return (
-    <Link
-      href={project.homepage || project.html_url}
-      target="_blank"
-      className="cursor-pointer group active:scale-[1.02] mt-14 grid md:grid-cols-3 grid-cols-1 gap-4 md:gap-7 justify-between items-center transition-all duration-300 ease-in-out transform hover:scale-[1.01] hover:bg-gray-50/50 dark:hover:bg-[#2a2a2a]/50 p-4 rounded-xl border border-transparent hover:border-gray-200/50 dark:hover:border-white/10 hover:shadow-lg"
-    >
+    <div className="relative group mt-14 grid md:grid-cols-3 grid-cols-1 gap-4 md:gap-7 justify-between items-center transition-all duration-300 ease-in-out transform hover:scale-[1.01] hover:bg-gray-50/50 dark:hover:bg-[#2a2a2a]/50 p-4 rounded-xl border border-transparent hover:border-gray-200/50 dark:hover:border-white/10 hover:shadow-lg">
       <div className="relative md:col-span-1 w-full h-44 sm:h-44 overflow-hidden rounded-xl shadow-sm">
         <Image
           src={GenerateImageUrl(project.full_name)}
           alt={project.name}
           fill
+          unoptimized
           loading="lazy"
           className="object-cover select-none transition-transform duration-500 ease-in-out group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
       <div className="md:col-span-2 space-y-2 p-2">
-        <h3 className="text-xs font-medium">{formatDate(project.created_at, project.updated_at)}</h3>
+        <div className="flex items-center justify-between relative z-20">
+          <h3 className="text-xs font-medium">
+            {formatDate(project.created_at, project.updated_at)}
+          </h3>
+          <GithubLink url={project.html_url} />
+        </div>
 
-        <div className="text-lg sm:text-xl font-semibold flex items-center capitalize">
-          {project.name.replaceAll("-", " ")}
+        <div className="text-lg sm:text-xl font-semibold flex items-center">
+          <Link
+            href={project.homepage || project.html_url}
+            target="_blank"
+            className="after:absolute after:inset-0 after:z-10 focus:outline-none"
+          >
+            {formatTechName(project.name)}
+          </Link>
           <Icon
             icon="heroicons:arrow-up-right-16-solid"
-            className="ml-1 transition-transform duration-200 group-hover:translate-x-1 group-active:translate-x-1  group-hover:-translate-y-1 group-active:-translate-y-1"
+            className="ml-1 transition-transform duration-200 group-hover:translate-x-1 group-active:translate-x-1 group-hover:-translate-y-1 group-active:-translate-y-1"
             width="16"
             height="16"
-          ></Icon>
+          />
         </div>
-        <p className="font-normal opacity-90 selection:opacity-100">{project.description}</p>
-        {project.topics
-          .filter((t) => t !== "include")
-          .slice(0, 5)
-          .map((tech) => (
-            <button
-              key={tech}
-              className="mr-1 px-3 py-1 rounded-full text-xs leading-5 bg-[#3d3d3d] text-gray-50 dark:text-[#3d3d3d] dark:bg-gray-50"
-            >
-              {formatTechName(tech)}
-            </button>
-          ))}
+        <p className="font-normal opacity-90 selection:opacity-100">
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-1 relative z-20">
+          {project.topics
+            .filter((t) => t !== "include")
+            .slice(0, 5)
+            .map((tech) => (
+              <button
+                key={tech}
+                className="px-3 py-1 rounded-full text-xs leading-5 bg-[#3d3d3d] text-gray-50 dark:text-[#3d3d3d] dark:bg-gray-50 hover:opacity-80 transition-opacity"
+              >
+                {formatTechName(tech)}
+              </button>
+            ))}
+        </div>
       </div>
-    </Link>
+    </div>
   );
 }

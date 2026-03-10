@@ -32,10 +32,6 @@ export const SKILLS = [
     //     "name": "EJS",
     //     "icon": "logos:ejs"
     // },
-    {
-        "name": "LangChain.js",
-        "icon": "simple-icons:langchain",
-    },
     // {
     //     "name": "Node.js",
     //     "icon": "logos:nodejs",
@@ -55,12 +51,16 @@ export const SKILLS = [
         "icon": "tabler:brand-socket-io",
     },
     {
-        "name": "Redis",
-        "icon": "logos:redis"
+        "name": "LangChain.js",
+        "icon": "simple-icons:langchain",
     },
     {
-        "name": "BullMQ",
-        "icon": "game-icons:charging-bull",
+        "name": "Pinecone",
+        "icon": "logos:pinecone-icon",
+    },
+    {
+        "name": "Redis",
+        "icon": "logos:redis"
     },
     {
         "name": "MongoDB",
@@ -75,10 +75,6 @@ export const SKILLS = [
     //     "icon": "logos:prisma",
     //     "dark": "simple-icons:prisma"
     // },
-    {
-        "name": "Pinecone",
-        "icon": "logos:pinecone-icon",
-    },
     {
         "name": "Git",
         "icon": "logos:git-icon"
@@ -99,6 +95,10 @@ export const SKILLS = [
         "name": "AWS",
         "icon": "logos:aws",
         "dark": "skill-icons:aws-dark"
+    },
+    {
+        "name": "BullMQ",
+        "icon": "mdi:mq",
     },
     // {
     //     "name": "Prometheus",
