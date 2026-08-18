@@ -20,7 +20,7 @@ export default function AchievementCard({ achievement }: Props) {
         <h3 className="text-sm font-normal text-gray-500 dark:text-gray-100">{achievement.time}</h3>
       </div>
       <h3 className="text-xl font-bold">{achievement.name}</h3>
-      <a href="${achievement.url}" target="_blank" className="group hover:underline text-sm flex font-normal items-center">
+      <a href={achievement.url} target="_blank" className="group hover:underline text-sm flex font-normal items-center">
         {achievement.place}
         <Icon
           icon="heroicons:arrow-up-right-16-solid"
