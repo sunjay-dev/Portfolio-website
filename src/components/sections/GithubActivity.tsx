@@ -3,21 +3,22 @@ import User from "@/data/user.json";
 
 /*
  * Matches the Github Activities chart of the "portfolio" inspiration (a
- * ghchart.rshah.org/158a17/ image): monochrome #158a17 ramp (white-mixed
- * shades), 11px square cells with 1px gaps, labels included. Only past days
- * are drawn. Rendered from data since ghchart.rshah.org is unreachable on
- * some networks.
+ * ghchart.rshah.org/158a17/ image): the exact fills read from its SVG —
+ * #EEEEEE empty, then #62d764 / #48bd4a / #158a17 / #116e12 per level —
+ * with 10px square cells on a 12px pitch and #767676 labels. Only past
+ * days are drawn. Rendered from data since ghchart.rshah.org is
+ * unreachable on some networks.
  */
 const LEVEL_CLASS = [
   "bg-[#eeeeee]",
-  "bg-[#c4e1c5]",
-  "bg-[#8ac48b]",
-  "bg-[#4fa751]",
+  "bg-[#62d764]",
+  "bg-[#48bd4a]",
   "bg-[#158a17]",
+  "bg-[#116e12]",
 ];
 
-const CELL = "size-[5px] sm:size-[11px]";
-const GAP = "gap-[1px]";
+const CELL = "size-[5px] sm:size-[10px]";
+const GAP = "gap-[2px]";
 
 type Contribution = { date: string; count: number; level: number };
 
@@ -96,10 +97,10 @@ export default async function GithubActivity() {
                 {labels.map((month, i) => (
                   <div
                     key={i}
-                    className="w-[5px] flex-none text-[8px] leading-none sm:w-[11px] sm:text-[10px]"
+                    className="w-[5px] flex-none text-[8px] leading-none sm:w-[10px] sm:text-[10px]"
                   >
                     {month && (
-                      <span className="whitespace-nowrap text-muted-foreground">
+                      <span className="whitespace-nowrap text-[#767676]">
                         {month}
                       </span>
                     )}
@@ -113,7 +114,7 @@ export default async function GithubActivity() {
                   {["", "Mon", "", "Wed", "", "Fri", ""].map((day, r) => (
                     <div
                       key={r}
-                      className={`${CELL} text-[9px] leading-[11px] text-muted-foreground`}
+                      className={`${CELL} text-[9px] leading-[10px] text-[#767676]`}
                     >
                       {day}
                     </div>
