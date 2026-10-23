@@ -67,7 +67,7 @@ export default function Experience() {
                         {item.name}
                         <Icon
                           icon="lucide:chevron-down"
-                          className={`size-3.5 shrink-0 text-muted-foreground transition-transform duration-200 ${
+                          className={`hidden size-3.5 shrink-0 text-muted-foreground transition-transform duration-200 sm:block ${
                             isOpen ? "rotate-180" : ""
                           }`}
                         />
