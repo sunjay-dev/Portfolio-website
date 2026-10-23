@@ -37,7 +37,7 @@ export default function Hero() {
     <section id="hero" className="pt-2 sm:pt-6">
       <div className="flex flex-row items-start justify-between gap-4">
         {/* Text */}
-        <div className="flex min-w-0 flex-col gap-3">
+        <div className="flex min-w-0 flex-1 flex-col gap-3">
           {/* Circle avatar on its own row, above the heading, on phones */}
           <div className="relative order-1 mx-auto size-40 overflow-hidden rounded-full border-2 border-border shadow-md sm:hidden">
             <Image
