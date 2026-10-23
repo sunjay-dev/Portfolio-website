@@ -57,6 +57,7 @@ export const SKILLS = [
     {
         "name": "Pinecone",
         "icon": "logos:pinecone-icon",
+        "dark": "thesvg:pinecone"
     },
     {
         "name": "Redis",
