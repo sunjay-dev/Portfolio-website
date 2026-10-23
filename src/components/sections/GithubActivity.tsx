@@ -16,7 +16,7 @@ const LEVEL_CLASS = [
   "bg-[#158a17]",
 ];
 
-const CELL = "size-[11px]";
+const CELL = "size-[5px] sm:size-[11px]";
 const GAP = "gap-[1px]";
 
 type Contribution = { date: string; count: number; level: number };
@@ -90,11 +90,14 @@ export default async function GithubActivity() {
           // -mx-5 lets the 661px grid fill the column like portfolio's image
           <div className="-mx-5 overflow-x-auto pb-1">
             <div className="w-fit">
-              {/* Month labels — text-[10px]/leading-none must sit on the div,
-                  its line-box strut otherwise (24px) pushes text into the grid */}
-              <div className={`ml-[26px] flex ${GAP}`}>
+              {/* Month labels — text size must sit on the div, its line-box
+                  strut otherwise pushes the text into the grid */}
+              <div className={`ml-0 flex ${GAP} sm:ml-[26px]`}>
                 {labels.map((month, i) => (
-                  <div key={i} className="w-[11px] flex-none text-[10px] leading-none">
+                  <div
+                    key={i}
+                    className="w-[5px] flex-none text-[8px] leading-none sm:w-[11px] sm:text-[10px]"
+                  >
                     {month && (
                       <span className="whitespace-nowrap text-muted-foreground">
                         {month}
@@ -105,8 +108,8 @@ export default async function GithubActivity() {
               </div>
 
               <div className="mt-1 flex gap-[6px]">
-                {/* Weekday labels */}
-                <div className={`flex w-5 flex-none flex-col ${GAP}`}>
+                {/* Weekday labels — hidden on phones like GitHub's mobile view */}
+                <div className={`hidden w-5 flex-none flex-col sm:flex ${GAP}`}>
                   {["", "Mon", "", "Wed", "", "Fri", ""].map((day, r) => (
                     <div
                       key={r}
