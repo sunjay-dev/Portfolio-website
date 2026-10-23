@@ -82,14 +82,16 @@ export default function Hero() {
         </div>
 
         {/* Avatar */}
-        <div className="relative size-20 flex-none overflow-hidden rounded-full border-2 border-border shadow-md sm:size-28 md:size-32">
+        <div className="relative size-24 flex-none overflow-hidden rounded-full border-2 border-border shadow-md sm:size-36 md:size-40">
           <Image
-            src="/img/me.webp"
+            src="/img/me2.jpg"
             alt={User.name}
             fill
             priority
-            className="object-cover"
-            sizes="(max-width: 640px) 5rem, (max-width: 768px) 7rem, 8rem"
+            loading="eager"
+            quality={100}
+            className="object-cover object-[center_33%]"
+            sizes="(max-width: 640px) 6rem, (max-width: 768px) 9rem, 10rem"
           />
         </div>
       </div>

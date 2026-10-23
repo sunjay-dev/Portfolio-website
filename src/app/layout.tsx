@@ -51,20 +51,18 @@ export default function RootLayout({
       >
         <ThemeInit />
 
-        {/* Flickering grid background at the top */}
+        {/* Flickering grid background at the top — portfolio2's exact settings */}
         <div
-          className="absolute inset-x-0 top-0 z-0 h-52 overflow-hidden pointer-events-none"
+          className="absolute inset-x-0 top-0 z-0 h-25 overflow-hidden pointer-events-none"
           aria-hidden="true"
         >
           <FlickeringGrid
             className="h-full w-full"
             squareSize={2}
-            gridGap={4}
-            maxOpacity={0.35}
-            flickerChance={0.1}
+            gridGap={2}
             style={{
-              maskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
+              maskImage: "linear-gradient(to bottom, black, transparent)",
+              WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
             }}
           />
         </div>
