@@ -56,7 +56,7 @@ export default function Hero() {
             Hi, I&apos;m {firstName} 👋
           </h1>
 
-          <LocationPill className="order-3 flex w-full sm:order-none sm:inline-flex sm:w-fit" />
+          <LocationPill className="order-3 flex sm:order-none sm:inline-flex" />
 
           <p className="order-4 max-w-xs text-muted-foreground sm:order-none sm:max-w-sm">
             {User.title} · {User.intro}
