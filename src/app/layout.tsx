@@ -1,20 +1,30 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import User from "@/data/user.json";
+import ThemeInit from "@/components/ui/ThemeInit";
+import Navbar from "@/components/layouts/Navbar";
+import FlickeringGrid from "@/components/ui/FlickeringGrid";
+import { Toaster } from "sonner";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
   title: `${User.name} | ${User.title}`,
-  description: "Passionate full-stack developer skilled in JavaScript, Node.js, React, and MongoDB.",
+  description: User.about[0],
   openGraph: {
     title: `${User.name} – ${User.title}`,
-    description: "Passionate full-stack developer skilled in JavaScript, Node.js, React, and MongoDB.",
+    description: User.about[0],
     url: "https://sunjay.xyz",
     type: "website",
     images: ["https://sunjay.xyz/img/me.webp"],
@@ -35,8 +45,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geist.variable} ${geistMono.variable} relative min-h-screen bg-background font-sans text-foreground antialiased`}
+      >
+        <ThemeInit />
+
+        {/* Flickering grid background at the top */}
+        <div
+          className="absolute inset-x-0 top-0 z-0 h-52 overflow-hidden pointer-events-none"
+          aria-hidden="true"
+        >
+          <FlickeringGrid
+            className="h-full w-full"
+            squareSize={2}
+            gridGap={4}
+            maxOpacity={0.35}
+            flickerChance={0.1}
+            style={{
+              maskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        {/* Main content */}
+        <div className="relative z-10 mx-auto max-w-2xl px-6 py-12 pb-28 sm:py-24">
+          {children}
+        </div>
+
+        {/* Floating bottom navbar */}
+        <Navbar />
+
+        {/* Toast notifications */}
+        <Toaster richColors position="bottom-center" />
+      </body>
     </html>
   );
 }

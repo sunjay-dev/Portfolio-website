@@ -1,12 +1,12 @@
 "use client";
 
-import Icon from "./Icon";
+import { Icon } from "@iconify/react";
 import User from "@/data/user.json";
 
 export default function ResumeDownloadButton() {
   const filename = `${User.name.split(" ").join("_")}_Resume.pdf`;
 
-  async function handleDownload() {
+  const handleDownload = async () => {
     const res = await fetch("/pdf/resume.pdf");
     const blob = await res.blob();
     const url = URL.createObjectURL(blob);
@@ -17,14 +17,16 @@ export default function ResumeDownloadButton() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  }
+  };
 
   return (
     <button
+      id="resume-download-btn"
       onClick={handleDownload}
-      className="max-w-3xl py-3 px-6 flex items-center gap-2 box-border font-medium border-[#3d3d3d] border-2 rounded-md hover:bg-[#3d3d3d] hover:text-white active:text-white active:bg-[#3d3d3d] transition-transform dark:border-white dark:hover:bg-white dark:hover:text-[#3d3d3d] dark:active:bg-white dark:active:text-[#3d3d3d] dark:text-white"
+      className="inline-flex h-9 items-center gap-2 rounded-md border border-border bg-background px-4 text-sm font-medium text-foreground transition-colors hover:bg-accent"
     >
-      <Icon icon="bx:file" className="w-5.5 h-5.5 dark:opacity-90 dark:hover:opacity-70" /> Resume
+      <Icon icon="lucide:file-text" className="h-3.5 w-3.5" />
+      Resume
     </button>
   );
 }
