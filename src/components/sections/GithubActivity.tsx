@@ -88,9 +88,10 @@ export default async function GithubActivity() {
         <SectionHeading>GitHub Activity</SectionHeading>
 
         {year.length > 0 ? (
-          // -mx-5 lets the 661px grid fill the column like portfolio's image
+          // -mx-5 lets the ~635px grid fill the column like portfolio's image;
+          // mx-auto centers it on phones where the responsive grid is narrower
           <div className="-mx-5 overflow-x-auto pb-1">
-            <div className="w-fit">
+            <div className="mx-auto w-fit">
               {/* Month labels — text size must sit on the div, its line-box
                   strut otherwise pushes the text into the grid */}
               <div className={`ml-0 flex ${GAP} sm:ml-[26px]`}>
