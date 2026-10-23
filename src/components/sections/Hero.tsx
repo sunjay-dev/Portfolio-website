@@ -5,6 +5,31 @@ import User from "@/data/user.json";
 import ResumeDownloadButton from "@/components/ui/ResumeDownloadButton";
 import LocalTime from "@/components/ui/LocalTime";
 
+// Location + availability pill. Rendered twice: inside the text column on
+// sm+ (portfolio2's layout) and full-width below the heading on phones,
+// where the avatar would otherwise squeeze it into wrapping.
+function LocationPill({ className }: { className?: string }) {
+  return (
+    <div
+      className={`w-fit max-w-full items-center gap-1.5 rounded-full bg-muted/60 px-2.5 py-1.5 text-sm sm:gap-2 sm:px-3 ${className ?? ""}`}
+    >
+      <span className="size-2 shrink-0 rounded-full bg-green-500" />
+      <span className="whitespace-nowrap font-medium text-foreground">
+        {User.location}
+      </span>
+      <span className="text-muted-foreground">·</span>
+      <Icon
+        icon="lucide:sunrise"
+        className="hidden size-4 shrink-0 text-muted-foreground sm:block"
+        aria-hidden
+      />
+      <span className="whitespace-nowrap text-muted-foreground">
+        <LocalTime timeZone="Asia/Karachi" />
+      </span>
+    </div>
+  );
+}
+
 export default function Hero() {
   const firstName = User.name.split(" ")[0];
 
@@ -13,31 +38,32 @@ export default function Hero() {
       <div className="flex flex-row items-start justify-between gap-4">
         {/* Text */}
         <div className="flex min-w-0 flex-col gap-3">
-          <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+          {/* Circle avatar on its own row, above the heading, on phones */}
+          <div className="relative order-1 mx-auto size-40 overflow-hidden rounded-full border-2 border-border shadow-md sm:hidden">
+            <Image
+              src="/img/me2.jpg"
+              alt={User.name}
+              fill
+              priority
+              loading="eager"
+              quality={100}
+              className="object-cover object-[center_25%]"
+              sizes="160px"
+            />
+          </div>
+
+          <h1 className="order-2 text-3xl font-semibold tracking-tighter sm:order-none sm:text-4xl lg:text-5xl">
             Hi, I&apos;m {firstName} 👋
           </h1>
 
-          {/* Location + availability pill */}
-          <div className="inline-flex w-full max-w-full items-center justify-center gap-1.5 rounded-full bg-muted/60 px-2.5 py-1.5 text-sm sm:w-fit sm:justify-start sm:gap-2 sm:px-3">
-            <span className="size-2 shrink-0 rounded-full bg-green-500" />
-            <span className="font-medium text-foreground">{User.location}</span>
-            <span className="text-muted-foreground">·</span>
-            <Icon
-              icon="lucide:sunrise"
-              className="hidden size-4 shrink-0 text-muted-foreground sm:block"
-              aria-hidden
-            />
-            <span className="whitespace-nowrap text-muted-foreground">
-              <LocalTime timeZone="Asia/Karachi" />
-            </span>
-          </div>
+          <LocationPill className="order-3 flex w-full sm:order-none sm:inline-flex sm:w-fit" />
 
-          <p className="max-w-xs text-muted-foreground sm:max-w-sm">
+          <p className="order-4 max-w-xs text-muted-foreground sm:order-none sm:max-w-sm">
             {User.title} · {User.intro}
           </p>
 
           {/* CTA buttons */}
-          <div className="mt-3 flex flex-wrap gap-3">
+          <div className="order-5 mt-3 flex flex-wrap gap-3 sm:order-none">
             <Link
               href="#connect"
               id="hero-contact-btn"
@@ -50,7 +76,7 @@ export default function Hero() {
           </div>
 
           {/* Social links */}
-          <div className="mt-1 flex items-center gap-4">
+          <div className="order-6 mt-1 flex items-center gap-4 sm:order-none">
             <a
               href={User.social.github.url}
               target="_blank"
@@ -81,8 +107,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Avatar */}
-        <div className="relative size-24 flex-none overflow-hidden rounded-full border-2 border-border shadow-md sm:size-36 md:size-40">
+        {/* Avatar — desktop only; phones get the full-row photo above */}
+        <div className="relative hidden size-36 flex-none overflow-hidden rounded-full border-2 border-border shadow-md md:size-40 sm:block">
           <Image
             src="/img/me2.jpg"
             alt={User.name}
