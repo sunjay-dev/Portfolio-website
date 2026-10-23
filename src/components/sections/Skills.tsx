@@ -13,10 +13,20 @@ export default function Skills() {
               key={i}
               className="flex h-8 w-fit items-center gap-2 rounded-xl border border-border bg-background px-3 ring-1 ring-border/30 transition-all duration-150 hover:bg-accent"
             >
-              <Icon
-                icon={skill.icon}
-                className="size-4 shrink-0"
-              />
+              {skill.dark ? (
+                <>
+                  <Icon
+                    icon={skill.icon}
+                    className="size-4 shrink-0 dark:hidden"
+                  />
+                  <Icon
+                    icon={skill.dark}
+                    className="hidden size-4 shrink-0 dark:block"
+                  />
+                </>
+              ) : (
+                <Icon icon={skill.icon} className="size-4 shrink-0" />
+              )}
               <span className="text-sm font-medium text-foreground">
                 {skill.name}
               </span>

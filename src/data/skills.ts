@@ -39,7 +39,7 @@ export const SKILLS = [
     // },
     {
         "name": "Express.js",
-        "icon": "logos:express",
+        "icon": "devicon:express",
         "dark": "simple-icons:express"
     },
     {
@@ -80,12 +80,12 @@ export const SKILLS = [
         "icon": "logos:git-icon"
     },
     {
-        "name": "GitHub Actions",
-        "icon": "devicon:githubactions",
-    },
-    {
         "name": "Docker",
         "icon": "logos:docker-icon"
+    },
+    {
+        "name": "GitHub Actions",
+        "icon": "devicon:githubactions",
     },
     {
         "name": "NGINX",

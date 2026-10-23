@@ -57,6 +57,9 @@ importers:
       '@iconify-json/tabler':
         specifier: ^1.2.42
         version: 1.2.42
+      '@iconify-json/thesvg':
+        specifier: ^1.2.10
+        version: 1.2.10
       '@iconify/utils':
         specifier: ^3.1.7
         version: 3.1.7
@@ -250,6 +253,9 @@ packages:
 
   '@iconify-json/tabler@1.2.42':
     resolution: {integrity: sha512-fObaBh/H2zJphk3lS1dWPUf/buuGaCHQXnB4UYgKOPXQub5Ac1qEu0AHRj/0+E2FEl8pWfgM2xQWzfz7ffcY+A==}
+
+  '@iconify-json/thesvg@1.2.10':
+    resolution: {integrity: sha512-kOULdW5Ely9KtXMslMtIMbJl2ul74JZTtVvqeuk8GY/VKQGH/1wOU0ueQsDpf/YMzVuNT6cV7Ff08KUE8j74wg==}
 
   '@iconify/react@6.0.2':
     resolution: {integrity: sha512-SMmC2sactfpJD427WJEDN6PMyznTFMhByK9yLW0gOTtnjzzbsi/Ke/XqsumsavFPwNiXs8jSiYeZTmLCLwO+Fg==}
@@ -2406,6 +2412,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/tabler@1.2.42':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/thesvg@1.2.10':
     dependencies:
       '@iconify/types': 2.0.0
 
