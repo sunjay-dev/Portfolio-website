@@ -17,7 +17,7 @@ export const SKILLS = [
         "dark": "skill-icons:nextjs-dark"
     },
     {
-        "name": "Tailwind CSS",
+        "name": "Tailwind",
         "icon": "logos:tailwindcss-icon"
     },
     // {
