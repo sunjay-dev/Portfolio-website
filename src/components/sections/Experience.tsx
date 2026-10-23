@@ -45,15 +45,16 @@ export default function Experience() {
                 >
                   <div className="flex min-w-0 flex-1 items-center gap-x-3">
                     {item.logo ? (
-                      // White brand mark — needs a dark circle to stay visible in both themes
-                      <div className="flex size-9 flex-none items-center justify-center rounded-full bg-neutral-900 md:size-11">
+                      // White brand mark: black-on-light circle in light mode
+                      // (CSS-inverted), white-on-dark in dark mode
+                      <div className="flex size-9 flex-none items-center justify-center rounded-full bg-muted dark:bg-neutral-900 md:size-11">
                         <Image
                           src={item.logo}
                           alt={item.name}
                           width={40}
                           height={40}
                           unoptimized
-                          className="size-5 object-contain md:size-6"
+                          className="size-5 object-contain invert dark:invert-0 md:size-6"
                         />
                       </div>
                     ) : (
