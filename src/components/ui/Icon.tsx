@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentProps } from "react";
+import { useId, type ComponentProps } from "react";
 // The /offline entry renders icons synchronously from registered data —
 // including during SSR — instead of fetching from api.iconify.design.
 import { addCollection, Icon as IconifyIcon } from "@iconify/react/offline";
@@ -48,6 +48,7 @@ function registerIcons() {
 
 registerIcons();
 
-export default function Icon(props: ComponentProps<typeof IconifyIcon>) {
-  return <IconifyIcon {...props} />;
+export default function Icon({ id, ...props }: ComponentProps<typeof IconifyIcon>) {
+  const autoId = useId();
+  return <IconifyIcon id={id ?? autoId} {...props} />;
 }
