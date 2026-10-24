@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import Icon from "@/components/ui/Icon";
 import { SKILLS } from "@/data/skills";
 import SectionHeading from "@/components/ui/SectionHeading";
 

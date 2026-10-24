@@ -1,6 +1,6 @@
 "use client";
 
-import { Icon } from "@iconify/react";
+import Icon from "@/components/ui/Icon";
 import User from "@/data/user.json";
 
 export default function ResumeDownloadButton() {

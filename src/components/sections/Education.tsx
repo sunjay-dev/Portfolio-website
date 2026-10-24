@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
+import Icon from "@/components/ui/Icon";
 import SectionHeading from "@/components/ui/SectionHeading";
 import data from "@/data/education.json";
 

@@ -1,13 +1,13 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Icon } from "@iconify/react";
+import Icon from "@/components/ui/Icon";
 import { toast } from "sonner";
 import SectionHeading from "@/components/ui/SectionHeading";
 import User from "@/data/user.json";
 
-const CAL_URL = "https://cal.com/sunjay/15min";
-const TWITTER_DM_URL = `https://twitter.com/messages/compose?recipient_id=sunjay`;
+const CAL_URL = "https://cal.com/sunjay-kumar/15min";
+const TWITTER_DM_URL = `https://twitter.com/messages/compose?recipient_id=sunjay_dev`;
 const BACKEND_URL = "/api/email";
 
 export default function Connect() {

@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-// Populates the client-side iconify store so icons render without network
-import "@/lib/offline-icons";
 
 /**
  * Initialises the theme on page load based on system preference or

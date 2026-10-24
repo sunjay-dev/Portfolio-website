@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
+import Icon from "@/components/ui/Icon";
 import { TECH_MAPPING } from "@/data/tech_mapping";
 
 type Repo = {
