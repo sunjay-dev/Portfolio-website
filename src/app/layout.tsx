@@ -6,12 +6,9 @@ import ThemeInit from "@/components/ui/ThemeInit";
 import Navbar from "@/components/layouts/Navbar";
 import FlickeringGrid from "@/components/ui/FlickeringGrid";
 import { Toaster } from "sonner";
+import { cn } from "@/lib/utils";
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
-});
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -45,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
       <body
         className={`${geist.variable} ${geistMono.variable} relative min-h-screen bg-background font-sans text-foreground antialiased`}
       >
