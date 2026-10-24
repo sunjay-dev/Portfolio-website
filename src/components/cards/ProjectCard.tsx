@@ -1,10 +1,12 @@
-import Icon from "@/components/ui/Icon";
-import { TECH_MAPPING } from "@/data/tech_mapping";
-import GithubLink from "@/components/ui/GithubLink";
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Icon from "@/components/ui/Icon";
+import { TECH_MAPPING } from "@/data/tech_mapping";
 
-type projectInterface = {
+type Repo = {
   html_url: string;
   created_at: string;
   updated_at: string;
@@ -15,103 +17,116 @@ type projectInterface = {
   homepage: string;
 };
 
-type Props = {
-  project: projectInterface;
-};
+function formatDate(start: string, end: string): string {
+  const s = new Date(start);
+  const e = new Date(end);
+  const fmt = (d: Date) => d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+  const isPresent = Math.abs(Date.now() - e.getTime()) < 1000 * 60 * 60 * 24 * 7;
+  if (isPresent) return `${fmt(s)} – Present`;
+  const same = s.getMonth() === e.getMonth() && s.getFullYear() === e.getFullYear();
+  if (same) return fmt(s);
+  return `${fmt(s)} – ${fmt(e)}`;
+}
 
-export default function ProjectCard({ project }: Props) {
-  function GenerateImageUrl(repo: string) {
-    return `https://raw.githubusercontent.com/${repo}/main/assets/preview.webp`;
-  }
+function formatName(tech: string): string {
+  const lower = tech.toLowerCase();
+  if (TECH_MAPPING[lower]) return TECH_MAPPING[lower];
+  return tech.split("-").map((w) => {
+    const lw = w.toLowerCase();
+    return TECH_MAPPING[lw] || w.charAt(0).toUpperCase() + w.slice(1);
+  }).join(" ");
+}
 
-  function formatDate(start: string, end: string): string {
-    const startDate = new Date(start);
-    const endDate = new Date(end);
+function PreviewImage({ src, alt }: { src: string; alt: string }) {
+  const [imageError, setImageError] = useState(false);
 
-    const startStr = startDate.toLocaleDateString("en-US", {
-      month: "short",
-      year: "numeric",
-    });
-
-    const endStr = endDate.toLocaleDateString("en-US", {
-      month: "short",
-      year: "numeric",
-    });
-
-    const isPresent = Math.abs(new Date().getTime() - endDate.getTime()) < 1000 * 60 * 60 * 24 * 7;
-    if (isPresent) return `${startStr} – Present`;
-
-    const sameMonth = startDate.getMonth() === endDate.getMonth() && startDate.getFullYear() === endDate.getFullYear();
-    if (sameMonth) return startStr;
-
-    return `${startStr} – ${endStr}`;
-  }
-
-  function formatTechName(tech: string): string {
-    const lowerTech = tech.toLowerCase();
-    if (TECH_MAPPING[lowerTech]) {
-      return TECH_MAPPING[lowerTech];
-    }
-    return tech
-      .split("-")
-      .map((word) => {
-        const lowerWord = word.toLowerCase();
-        return TECH_MAPPING[lowerWord] || (word.charAt(0).toUpperCase() + word.slice(1));
-      })
-      .join(" ");
+  if (!src || imageError) {
+    return <div className="h-48 w-full bg-muted" />;
   }
 
   return (
-    <div className="relative group mt-14 grid md:grid-cols-3 grid-cols-1 gap-4 md:gap-7 justify-between items-center transition-all duration-300 ease-in-out transform hover:scale-[1.01] hover:bg-gray-50/50 dark:hover:bg-[#2a2a2a]/50 p-4 rounded-xl border border-transparent hover:border-gray-200/50 dark:hover:border-white/10 hover:shadow-lg">
-      <div className="relative md:col-span-1 w-full h-44 sm:h-44 overflow-hidden rounded-xl shadow-sm">
-        <Image
-          src={GenerateImageUrl(project.full_name)}
-          alt={project.name}
-          fill
-          unoptimized
-          loading="lazy"
-          className="object-cover select-none transition-transform duration-500 ease-in-out group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 33vw"
-        />
-      </div>
-      <div className="md:col-span-2 space-y-2 p-2">
-        <div className="flex items-center justify-between relative z-20">
-          <h3 className="text-xs font-medium">
-            {formatDate(project.created_at, project.updated_at)}
-          </h3>
-          <GithubLink url={project.html_url} />
+    <div className="relative h-48 w-full">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        unoptimized
+        className="object-cover"
+        onError={() => setImageError(true)}
+      />
+    </div>
+  );
+}
+
+export default function ProjectCard({ project }: { project: Repo }) {
+  const previewUrl = `https://raw.githubusercontent.com/${project.full_name}/main/assets/preview.webp`;
+  const href = project.homepage || project.html_url;
+  const tags = project.topics.filter((t) => t !== "include").slice(0, 5);
+
+  return (
+    <div className="flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border transition-all duration-200 hover:ring-2 hover:ring-muted">
+      <Link href={href} target="_blank" rel="noopener noreferrer" className="block shrink-0">
+        <PreviewImage src={previewUrl} alt={project.name} />
+      </Link>
+
+      <div className="flex flex-1 flex-col gap-3 p-6">
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-col gap-1">
+            <h3 className="font-semibold">{formatName(project.name)}</h3>
+            <time className="text-xs text-muted-foreground">
+              {formatDate(project.created_at, project.updated_at)}
+            </time>
+          </div>
+          <Link
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${project.name}`}
+            className="rounded-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <Icon icon="lucide:arrow-up-right" className="size-4" />
+          </Link>
         </div>
 
-        <div className="text-lg sm:text-xl font-semibold flex items-center">
-          <Link
-            href={project.homepage || project.html_url}
-            target="_blank"
-            className="after:absolute after:inset-0 after:z-10 focus:outline-none"
-          >
-            {formatTechName(project.name)}
-          </Link>
-          <Icon
-            icon="heroicons:arrow-up-right-16-solid"
-            className="ml-1 transition-transform duration-200 group-hover:translate-x-1 group-active:translate-x-1 group-hover:-translate-y-1 group-active:-translate-y-1"
-            width="16"
-            height="16"
-          />
-        </div>
-        <p className="font-normal opacity-90 selection:opacity-100">
+        <p className="max-w-full text-pretty text-xs leading-relaxed text-muted-foreground">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-1 relative z-20">
-          {project.topics
-            .filter((t) => t !== "include")
-            .slice(0, 5)
-            .map((tech) => (
-              <button
-                key={tech}
-                className="px-3 py-1 rounded-full text-xs leading-5 bg-[#3d3d3d] text-gray-50 dark:text-[#3d3d3d] dark:bg-gray-50 hover:opacity-80 transition-opacity"
+
+        {tags.length > 0 && (
+          <div className="flex flex-wrap gap-1">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex h-6 w-fit items-center rounded-md border border-border px-2 text-[11px] font-medium text-foreground"
               >
-                {formatTechName(tech)}
-              </button>
+                {formatName(tag)}
+              </span>
             ))}
+          </div>
+        )}
+
+        <div className="flex flex-wrap gap-2">
+          {/* The repo's About-website URL from the GitHub API (homepage) */}
+          {project.homepage && (
+            <Link
+              href={project.homepage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-6 items-center gap-1.5 rounded-md border border-border bg-black px-2 text-xs font-medium text-white dark:bg-white dark:text-black"
+            >
+              <Icon icon="lucide:globe" className="size-3" />
+              Website
+            </Link>
+          )}
+          <Link
+            href={project.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-6 items-center gap-1.5 rounded-md border border-border bg-black px-2 text-xs font-medium text-white dark:bg-white dark:text-black"
+          >
+            <Icon icon="lucide:github" className="size-3" />
+            Source
+          </Link>
         </div>
       </div>
     </div>
