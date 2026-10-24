@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: User.about[0],
     url: "https://sunjay.xyz",
     type: "website",
-    images: ["https://sunjay.xyz/img/me.webp"],
+    images: ["https://sunjay.xyz/img/me.jpg"],
   },
   icons: {
     shortcut: "/svg/code.svg",

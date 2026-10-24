@@ -28,7 +28,7 @@ export default function Hero() {
         <div className="flex min-w-0 flex-1 flex-col gap-3">
           <div className="relative order-1 mx-auto size-40 overflow-hidden rounded-full border-2 border-border shadow-md sm:hidden">
             <Image
-              src="/img/me2.jpg"
+              src="/img/me.jpg"
               alt={User.name}
               fill
               priority
@@ -94,7 +94,7 @@ export default function Hero() {
         {/* Avatar: desktop only*/}
         <div className="relative hidden size-36 flex-none overflow-hidden rounded-full border-2 border-border shadow-md md:size-40 sm:block">
           <Image
-            src="/img/me2.jpg"
+            src="/img/me.jpg"
             alt={User.name}
             fill
             priority
