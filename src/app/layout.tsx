@@ -4,7 +4,7 @@ import "./globals.css";
 import User from "@/data/user.json";
 import ThemeInit from "@/components/ui/ThemeInit";
 import Navbar from "@/components/layouts/Navbar";
-import FlickeringGrid from "@/components/ui/FlickeringGrid";
+import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 
@@ -48,19 +48,17 @@ export default function RootLayout({
       >
         <ThemeInit />
 
-        {/* Flickering grid background at the top — portfolio2's exact settings */}
+        {/* Animated grid background at the top (option D from /bg-variants) */}
         <div
           className="absolute inset-x-0 top-0 z-0 h-25 overflow-hidden pointer-events-none"
           aria-hidden="true"
         >
-          <FlickeringGrid
-            className="h-full w-full"
-            squareSize={2}
-            gridGap={2}
-            style={{
-              maskImage: "linear-gradient(to bottom, black, transparent)",
-              WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
-            }}
+          <AnimatedGridPattern
+            numSquares={30}
+            maxOpacity={0.1}
+            duration={3}
+            repeatDelay={0.5}
+            className="h-full w-full [mask-image:linear-gradient(to_bottom,black,transparent)]"
           />
         </div>
 

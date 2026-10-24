@@ -7,7 +7,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import User from "@/data/user.json";
 
 const CAL_URL = "https://cal.com/sunjay-kumar/15min";
-const TWITTER_DM_URL = `https://twitter.com/messages/compose?recipient_id=sunjay_dev`;
+// DM compose deep link — recipient_id is the NUMERIC X user id of @sunjay_dev
+const X_DM_URL = `https://x.com/messages/compose?recipient_id=1598689044229230595`;
 const BACKEND_URL = "/api/email";
 
 export default function Connect() {
@@ -74,7 +75,7 @@ export default function Connect() {
           </button>
 
           <button
-            onClick={() => window.open(TWITTER_DM_URL, "_blank")}
+            onClick={() => window.open(X_DM_URL, "_blank")}
             id="chat-twitter-btn"
             className="inline-flex h-9 items-center gap-2 rounded-md bg-sky-500 px-4 text-sm font-medium text-white transition-opacity hover:bg-sky-500/90"
           >
