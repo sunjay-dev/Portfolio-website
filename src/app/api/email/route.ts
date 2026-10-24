@@ -5,17 +5,17 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, message } = body;
+    const { email, message } = body;
 
-    if (!name || !email || !message) {
-      return NextResponse.json({ message: "All three fields are required" }, { status: 400 });
+    if (!email || !message) {
+      return NextResponse.json({ message: "Email and message are required" }, { status: 400 });
     }
 
     if (!isValidEmail(email)) {
       return NextResponse.json({ message: "Please enter a Valid email" }, { status: 400 });
     }
 
-    const result = await sendemail({ name, email, message });
+    const result = await sendemail({ email, message });
 
     if (!result.success) {
       return NextResponse.json({ message: "Failed to send email" }, { status: 500 });

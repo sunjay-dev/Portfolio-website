@@ -42,7 +42,7 @@ export default function Connect() {
       const res = await fetch(BACKEND_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: "Portfolio Visitor", email, message }),
+        body: JSON.stringify({ email, message }),
       });
 
       if (!res.ok) throw new Error("Server error");

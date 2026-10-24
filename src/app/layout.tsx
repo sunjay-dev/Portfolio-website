@@ -26,9 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sunjay.xyz/img/me.jpg"],
   },
-  icons: {
-    shortcut: "/svg/code.svg",
-  },
+  // favicon comes from the src/app/icon.jpg file convention
 };
 
 export const viewport = {

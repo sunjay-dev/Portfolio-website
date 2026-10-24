@@ -1,11 +1,15 @@
 type Props = {
-  name: string;
   email: string;
   message: string;
 };
 
-export const emailTemplate = ({ name, email, message }: Props) => `
-<!DOCTYPE html>
+const escapeHtml = (text: string) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+export const emailTemplate = ({ email, message }: Props) => {
+  const safeEmail = escapeHtml(email);
+  const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
+
+  return `<!DOCTYPE html>
 <html>
 <head>
   <style>
@@ -33,10 +37,10 @@ export const emailTemplate = ({ name, email, message }: Props) => `
 </head>
 <body>
   <div class="container">
-    <p><span class="label">Name:</span> ${name}</p>
-    <p><span class="label">Email:</span> ${email}</p>
+    <p><span class="label">Email:</span> ${safeEmail}</p>
     <p><span class="label">Message:</span></p>
-    <p>${message}</p>
+    <p>${safeMessage}</p>
   </div>
 </body>
 </html>`;
+};
