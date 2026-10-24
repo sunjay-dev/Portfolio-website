@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import Icon from "@/components/ui/Icon";
-import { toast } from "sonner";
 import SectionHeading from "@/components/ui/SectionHeading";
 import User from "@/data/user.json";
 
@@ -11,10 +10,13 @@ const CAL_URL = "https://cal.com/sunjay-kumar/15min";
 const X_DM_URL = `https://x.com/messages/compose?recipient_id=1598689044229230595`;
 const BACKEND_URL = "/api/email";
 
+type Status = { type: "success" | "error"; text: string } | null;
+
 export default function Connect() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<Status>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const autoResize = () => {
@@ -29,11 +31,11 @@ export default function Connect() {
 
   const handleSend = async () => {
     if (!email || !message) {
-      toast.error("Please fill in all fields.");
+      setStatus({ type: "error", text: "Please fill in all fields." });
       return;
     }
     if (!validateEmail(email)) {
-      toast.error("Please enter a valid email address.");
+      setStatus({ type: "error", text: "Please enter a valid email address." });
       return;
     }
 
@@ -47,12 +49,18 @@ export default function Connect() {
 
       if (!res.ok) throw new Error("Server error");
 
-      toast.success("Message sent! I'll get back to you soon.");
+      setStatus({
+        type: "success",
+        text: "Message sent — thanks for reaching out!",
+      });
       setEmail("");
       setMessage("");
       if (textareaRef.current) textareaRef.current.style.height = "auto";
     } catch {
-      toast.error("Failed to send message. Please try again.");
+      setStatus({
+        type: "error",
+        text: "Failed to send message. Please try again.",
+      });
     } finally {
       setSending(false);
     }
@@ -86,6 +94,43 @@ export default function Connect() {
 
         {/* Email form */}
         <div className="flex flex-col gap-3 mt-1">
+          {/* Inline status card above the fields */}
+          {status && (
+            <div
+              role="status"
+              className={`animate-fade-in flex items-start justify-between gap-3 rounded-lg border px-3.5 py-3 ${
+                status.type === "success"
+                  ? "border-green-500/40 bg-green-500/10"
+                  : "border-red-500/40 bg-red-500/10"
+              }`}
+            >
+              <div className="flex items-start gap-2.5">
+                <Icon
+                  icon={
+                    status.type === "success"
+                      ? "lucide:circle-check"
+                      : "lucide:circle-x"
+                  }
+                  className={`mt-0.5 size-4 shrink-0 ${
+                    status.type === "success"
+                      ? "text-green-600 dark:text-green-400"
+                      : "text-red-600 dark:text-red-400"
+                  }`}
+                />
+                <p className="text-sm font-medium text-foreground">
+                  {status.text}
+                </p>
+              </div>
+              <button
+                onClick={() => setStatus(null)}
+                aria-label="Dismiss"
+                className="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Icon icon="lucide:x" className="size-4" />
+              </button>
+            </div>
+          )}
+
           <div className="flex flex-col gap-1">
             <label htmlFor="connect-email" className="text-sm font-medium text-muted-foreground">
               Email

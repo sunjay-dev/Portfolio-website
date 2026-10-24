@@ -5,7 +5,6 @@ import User from "@/data/user.json";
 import ThemeInit from "@/components/ui/ThemeInit";
 import Navbar from "@/components/layouts/Navbar";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
-import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -69,7 +68,6 @@ export default function RootLayout({
         <Navbar />
 
         {/* Toast notifications */}
-        <Toaster richColors position="bottom-center" />
       </body>
     </html>
   );
