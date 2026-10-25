@@ -6,9 +6,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import User from "@/data/user.json";
 import { parseContactForm } from "@/lib/validators";
 
-const CAL_URL = "https://cal.com/sunjay-kumar/15min";
-// DM compose deep link — recipient_id is the NUMERIC X user id of @sunjay_dev
-const X_DM_URL = `https://x.com/messages/compose?recipient_id=1598689044229230595`;
+// DM compose deep link — recipient_id is the NUMERIC X user id from user.json
+const X_DM_URL = `https://x.com/messages/compose?recipient_id=${User.social.xId}`;
 const BACKEND_URL = "/api/email";
 
 type Status = { type: "success" | "error"; text: string } | null;
@@ -70,7 +69,7 @@ export default function Connect() {
         {/* Quick-action buttons */}
         <div className="flex flex-wrap gap-3">
           <button
-            onClick={() => window.open(CAL_URL, "_blank")}
+            onClick={() => window.open(User.social.calCom, "_blank")}
             id="schedule-meeting-btn"
             className="inline-flex h-9 items-center gap-2 rounded-md bg-emerald-500 px-4 text-sm font-medium text-white transition-opacity hover:bg-emerald-500/90"
           >
