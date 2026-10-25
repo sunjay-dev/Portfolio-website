@@ -8,22 +8,5 @@
       "start": "2022",
       "end": "2026"
     }
-  ],
-  "hidden": {
-    "webDevelopmentCourse": {
-      "id": 4,
-      "time": "2023",
-      "name": "Web Development Course",
-      "icon": "lucide:certificate",
-      "place": "National Freelancing Training Program",
-      "url": "https://nftp.pitb.gov.pk/",
-      "shortDesc": "Joined during my <b>First year</b> of university to learn basics of web development.",
-      "KeyAchievement": [
-        "Learned the basics of HTML, CSS, and JavaScript.",
-        "Gained an understanding of how backend systems work behind the scenes.",
-        "Learned to use MySQL for managing databases and organizing data.",
-        "Created multiple projects to apply concepts learned from course."
-      ]
-    }
-  }
+  ]
 }

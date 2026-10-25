@@ -14,21 +14,5 @@
       "Directed database schema design and UI development, partnering with a 3-developer team to ship the platform end-to-end.",
       "Attended 6+ weekly client meetings to gather requirements and translate feedback into implementation changes."
     ]
-  },
-  {
-    "id": 2,
-    "time": "Jan - Feb 2025",
-    "name": "Hack for Humanity - 2025",
-    "icon": "lucide:trophy",
-    "place": "Dev Post",
-    "url": "https://devpost.com/software/ride-sharing-website",
-    "hidden": true,
-    "shortDesc": "Ranked <b>20th overall</b> and won the <b>Public Voting Award</b> among 100+ participating teams.",
-    "KeyAchievement": [
-      "Created a carpooling web app to solve university commute issues.",
-      "Developed backend using Express.js and MongoDB to handle ride creation, joining, and real-time updates via WebSockets.",
-      "Designed frontend using EJS and Tailwind CSS.",
-      "Implemented ride history, live ride tracking, and notification system for cancellations"
-    ]
   }
 ]

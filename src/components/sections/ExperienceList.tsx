@@ -5,32 +5,12 @@ import Image from "next/image";
 import Icon from "@/components/ui/Icon";
 import achievements from "@/data/achivements.json";
 
-type AchievementItem = {
-  id: number;
-  time: string;
-  name: string;
-  icon: string;
-  logo?: string;
-  place: string;
-  url: string;
-  shortDesc: string;
-  KeyAchievement: string[];
-  hidden?: boolean;
-};
-
-// The expandable experience rows (client: accordion state). The Experience
-// section renders this inside its server-rendered shell.
 export default function ExperienceList() {
   const [openId, setOpenId] = useState<number | null>(null);
 
-  // Entries with "hidden": true stay in the data file but are not rendered
-  const items = (achievements as AchievementItem[]).filter(
-    (item) => item.hidden !== true
-  );
-
   return (
     <div className="flex flex-col">
-      {items.map((item) => {
+      {achievements.map((item) => {
         const isOpen = openId === item.id;
 
         return (
@@ -42,8 +22,6 @@ export default function ExperienceList() {
             >
               <div className="flex min-w-0 flex-1 items-center gap-x-3">
                 {item.logo ? (
-                  // White brand mark: black-on-light circle in light mode
-                  // (CSS-inverted), white-on-dark in dark mode
                   <div className="flex size-9 flex-none items-center justify-center rounded-full bg-muted dark:bg-neutral-900 md:size-11">
                     <Image
                       src={item.logo}
@@ -79,10 +57,7 @@ export default function ExperienceList() {
 
             {isOpen && (
               <div className="ml-12 animate-fade-in space-y-3 pb-4 md:ml-14">
-                <p
-                  className="text-sm leading-relaxed text-muted-foreground"
-                  dangerouslySetInnerHTML={{ __html: item.shortDesc }}
-                />
+                <p className="text-sm leading-relaxed text-muted-foreground" dangerouslySetInnerHTML={{ __html: item.shortDesc }} />
                 <ul className="list-disc space-y-1.5 pl-4 text-xs text-muted-foreground sm:text-sm">
                   {item.KeyAchievement.map((point, i) => (
                     <li key={i} className="leading-relaxed">
