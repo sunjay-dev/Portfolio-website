@@ -17,7 +17,7 @@ export const SKILLS = [
         "dark": "skill-icons:nextjs-dark"
     },
     {
-        "name": "Tailwind CSS",
+        "name": "Tailwind",
         "icon": "logos:tailwindcss-icon"
     },
     // {
@@ -39,7 +39,7 @@ export const SKILLS = [
     // },
     {
         "name": "Express.js",
-        "icon": "logos:express",
+        "icon": "devicon:express",
         "dark": "simple-icons:express"
     },
     {
@@ -57,6 +57,7 @@ export const SKILLS = [
     {
         "name": "Pinecone",
         "icon": "logos:pinecone-icon",
+        "dark": "thesvg:pinecone"
     },
     {
         "name": "Redis",
@@ -80,12 +81,12 @@ export const SKILLS = [
         "icon": "logos:git-icon"
     },
     {
-        "name": "GitHub Actions",
-        "icon": "devicon:githubactions",
-    },
-    {
         "name": "Docker",
         "icon": "logos:docker-icon"
+    },
+    {
+        "name": "GitHub Actions",
+        "icon": "devicon:githubactions",
     },
     {
         "name": "NGINX",

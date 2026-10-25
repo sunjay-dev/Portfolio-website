@@ -3,14 +3,17 @@ import { Resend } from "resend";
 import { emailTemplate } from "./templete";
 
 type Props = {
-  name: string;
   email: string;
   message: string;
 };
 
-const resend = new Resend(process.env.RESEND_EMAIL_API_KEY);
+let _resend: Resend | null = null;
+function getResend() {
+  if (!_resend) _resend = new Resend(process.env.RESEND_EMAIL_API_KEY);
+  return _resend;
+}
 
-export async function sendemail({ name, email, message }: Props) {
+export async function sendemail({ email, message }: Props) {
   if (!process.env.RESEND_EMAIL_API_KEY) {
     throw new Error("RESEND_EMAIL_API_KEY missing");
   }
@@ -20,11 +23,12 @@ export async function sendemail({ name, email, message }: Props) {
   }
 
   try {
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: process.env.SENDER_EMAIL as string,
       to: process.env.RECEIVING_EMAIL as string,
-      subject: `Message from ${name} from Portfolio Website`,
-      html: emailTemplate({ name, email, message }),
+      replyTo: email,
+      subject: `Portfolio — new message`,
+      html: emailTemplate({ email, message }),
     });
 
     if (error) {
