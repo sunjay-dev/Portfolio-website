@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Icon from "@/components/ui/Icon";
 import SectionHeading from "@/components/ui/SectionHeading";
 import User from "@/data/user.json";
+import { parseContactForm } from "@/lib/validators";
 
 const CAL_URL = "https://cal.com/sunjay-kumar/15min";
 // DM compose deep link — recipient_id is the NUMERIC X user id of @sunjay_dev
@@ -27,15 +28,10 @@ export default function Connect() {
     }
   };
 
-  const validateEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-
   const handleSend = async () => {
-    if (!email || !message) {
-      setStatus({ type: "error", text: "Please fill in all fields." });
-      return;
-    }
-    if (!validateEmail(email)) {
-      setStatus({ type: "error", text: "Please enter a valid email address." });
+    const result = parseContactForm({ email, message });
+    if (!result.success) {
+      setStatus({ type: "error", text: result.issues[0]?.message ?? "Invalid input" });
       return;
     }
 

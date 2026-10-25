@@ -7,8 +7,6 @@ type Props = {
   message: string;
 };
 
-// Created lazily so a missing API key doesn't crash the build;
-// requests are rejected with a clear error in sendemail instead.
 let _resend: Resend | null = null;
 function getResend() {
   if (!_resend) _resend = new Resend(process.env.RESEND_EMAIL_API_KEY);
