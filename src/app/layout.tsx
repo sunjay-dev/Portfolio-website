@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: User.about[0],
     url: "https://sunjay.xyz",
     type: "website",
-    images: ["https://sunjay.xyz/img/me.jpg"],
+    images: ["https://sunjay.xyz/img/me.webp"],
   },
   // favicon comes from the src/app/icon.jpg file convention
 };
